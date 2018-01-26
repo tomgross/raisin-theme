@@ -1,0 +1,24 @@
+{
+  "name": "@unic/estatico-boilerplate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "gulp": "gulp"
+  },
+  "author": "Unic AG",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "estatico-handlebars": "0.0.1",
+    "estatico-w3c-validator": "0.0.1",
+    "estatico-stylelint": "0.0.1",
+    "estatico-watch": "0.0.1"
+  },
+  "engines": {
+    "node": ">=8 <9"
+  }
+}
