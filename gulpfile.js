@@ -491,6 +491,7 @@ gulp.task('media:svgsprite', () => {
     src: {
       base: './src/assets/media/svg/**/*.svg',
       demo: './src/demo/modules/svgsprite/svg/*.svg',
+      'sir-trevor-icons': './node_modules/sir-trevor/build/*.svg',
     },
     srcBase: './src',
     dest: './dist/assets/media/svgsprite',

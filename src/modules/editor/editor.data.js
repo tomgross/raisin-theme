@@ -3,13 +3,13 @@ const dataHelper = require('@unic/estatico-data');
 const { handlebars } = require('@unic/estatico-handlebars');
 const defaultData = require('../../data/default.data.js');
 
-const template = dataHelper.getFileContent('{{fileName}}.hbs');
+const template = dataHelper.getFileContent('editor.hbs');
 const data = _.merge({}, defaultData, {
   meta: {
-    title: '{{name}}',
-    className: '{{className}}',
+    title: 'editor',
+    className: 'Editor',
     jira: 'OO-*',
-    documentation: dataHelper.getDocumentation('{{fileName}}.md'),
+    documentation: dataHelper.getDocumentation('editor.md'),
   },
   props: {
 

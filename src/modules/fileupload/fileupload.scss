@@ -1,0 +1,43 @@
+.m-fileupload {
+
+  .box__dragndrop,
+  .box__uploading,
+  .box__success,
+  .box__error {
+    display: none;
+  }
+
+  font-size: 1.25rem; /* 20 */
+  background-color: #c8dadf;
+  position: relative;
+  padding: 100px 20px;
+
+
+}
+
+.m-fileupload.has-advanced-upload {
+  background-color: #c8dadf;
+  outline: 2px dashed black;
+  outline-offset: -10px;
+}
+
+.m-fileupload.has-advanced-upload .box__file {
+  display: none;
+}
+
+
+.box.is-uploading .box__input {
+  visibility: none;
+}
+.box.is-uploading .box__uploading {
+  display: block;
+}
+
+.m-fileupload.has-advanced-upload .box__dragndrop {
+  display: inline;
+}
+
+.m-fileupload.is-dragover {
+  background-color: grey;
+}
+

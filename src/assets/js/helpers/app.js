@@ -9,6 +9,8 @@ import loadPolyfills from './polyfills';
 /** Demo modules * */
 import SkipLinks from '../../../demo/modules/skiplinks/skiplinks';
 import SlideShow from '../../../demo/modules/slideshow/slideshow';
+import Fileupload from '../../../modules/fileupload/fileupload';
+import Editor from '../../../modules/editor/editor';
 /* autoinsertmodulereference */ // eslint-disable-line
 
 class App {
@@ -22,6 +24,8 @@ class App {
     this.modules = {};
     this.modules.slideshow = SlideShow;
     this.modules.skiplinks = SkipLinks;
+		this.modules.fileupload = Fileupload;
+		this.modules.editor = Editor;
 		/* autoinsertmodule */ // eslint-disable-line
 
     // expose initModule function

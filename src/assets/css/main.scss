@@ -28,7 +28,11 @@
 @import "../../demo/modules/slideshow/slideshow";
 @import "../../demo/modules/imageversions/imageversions";
 @import "../../demo/modules/svgsprite/svgsprite";
+@import "../../modules/fileupload/fileupload";
+@import "../../modules/editor/editor";
 //*autoinsertmodule*
+
+@import "../../../node_modules/sir-trevor/build/sir-trevor";
 
 @media print {
   @import "print";
