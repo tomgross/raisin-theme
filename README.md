@@ -1,6 +1,7 @@
-# @unic/estatico-boilerplate
+# raisin-theme
+A frontend build for OLAT
 
-Demo repo based on old Estático. Tasks were completely replaced with new ones and the source files were adapted where necessary.
+Based on  @unic/estatico-boilerplate
 
 ## Installation
 
@@ -14,10 +15,8 @@ git filter-branch --subdirectory-filter packages/estatico-boilerplate
 # Optionally use Docker container, see below
 
 # Install correct node version
-nvm install
+yarn install
 
-# Install npm packages
-npm install
 ```
 
 ## Usage
