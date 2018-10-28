@@ -3,16 +3,17 @@ A frontend build for OLAT
 
 Based on  @unic/estatico-boilerplate
 
+## Dependencies
+
+ - GraphicMagick
+
 ## Installation
 
 ```bash
 # Use git to get boilerplate subpackage from monorepo
 # We are only interested in the current directory, so we can get rid of everthing else via `git filter-branch`
-git clone https://github.com/unic/estatico-nou.git
-cd estatico-nou
-git filter-branch --subdirectory-filter packages/estatico-boilerplate
-
-# Optionally use Docker container, see below
+git clone https://github.com/tomgross/raisin-theme.git
+cd raisin-theme
 
 # Install correct node version
 yarn install
@@ -25,20 +26,6 @@ yarn install
 - Run specific task: `$ npm run html -- --dev`
 
 See `gulpfile.js` for details.
-
-## Docker
-
-```bash
-# Create image (only initially and after changes to the Dockerfile)
-docker build -t estatico .
-
-# Start container and mount project directory
-docker container run -it -p 9000:9000 -p 35729:35729 -v $(pwd):/app estatico /bin/bash
-
-# Continue above (nvm is preinstalled in the box)
-# After installing the correct node version via nvm, it might be helpful to commit this new state so it is persisted for the next run:
-# docker commit CONTAINER_ID estatico
-```
 
 ## License
 
