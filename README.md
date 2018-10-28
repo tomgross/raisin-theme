@@ -14,12 +14,11 @@ sudo apt-get install graphicsmagick
 ## Installation
 
 ```bash
-# Use git to get boilerplate subpackage from monorepo
-# We are only interested in the current directory, so we can get rid of everthing else via `git filter-branch`
+# Use git to get the theme from github
 git clone https://github.com/tomgross/raisin-theme.git
 cd raisin-theme
 
-# Install correct node version
+# Install dependencies
 yarn install
 
 ```
