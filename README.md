@@ -5,7 +5,11 @@ Based on  @unic/estatico-boilerplate
 
 ## Dependencies
 
- - GraphicMagick
+ - GraphicsMagick
+ 
+```bash
+sudo apt-get install graphicsmagick
+```
 
 ## Installation
 
@@ -22,8 +26,8 @@ yarn install
 
 ## Usage
 
-- Run default task, building everything and starting web server: `$ npm run gulp -- --dev --watch`
-- Run specific task: `$ npm run html -- --dev`
+- Run default task, building everything and starting web server: `$ yarn run gulp -- --dev --watch`
+- Run specific task: `$ yarn run html -- --dev`
 
 See `gulpfile.js` for details.
 
