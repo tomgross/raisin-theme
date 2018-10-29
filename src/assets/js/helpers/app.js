@@ -11,6 +11,11 @@ import SkipLinks from '../../../demo/modules/skiplinks/skiplinks';
 import SlideShow from '../../../demo/modules/slideshow/slideshow';
 import Fileupload from '../../../modules/fileupload/fileupload';
 import Editor from '../../../modules/editor/editor';
+import TopMenu from '../../../modules/top_menu/top_menu';
+import Footer from '../../../modules/footer/footer';
+import NavBar from '../../../modules/nav_bar/nav_bar';
+import TableToolbar from '../../../modules/table_toolbar/table_toolbar';
+import ContentTable from '../../../modules/content_table/content_table';
 /* autoinsertmodulereference */ // eslint-disable-line
 
 class App {
@@ -26,6 +31,11 @@ class App {
     this.modules.skiplinks = SkipLinks;
 		this.modules.fileupload = Fileupload;
 		this.modules.editor = Editor;
+		this.modules.topMenu = TopMenu;
+		this.modules.footer = Footer;
+		this.modules.navBar = NavBar;
+		this.modules.tableToolbar = TableToolbar;
+		this.modules.contentTable = ContentTable;
 		/* autoinsertmodule */ // eslint-disable-line
 
     // expose initModule function
