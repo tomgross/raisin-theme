@@ -1,0 +1,138 @@
+// Core variables and mixins
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss";
+
+
+// Reset
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
+
+// Core CSS
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+/* we use font-awesome instead
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+*/
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/badges";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
+
+// Components w/ JavaScript
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+//@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+
+// Utility classes
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+
+/* override */
+//like previous layout in openolat
+body .modal {
+  position: absolute;
+  overflow: visible;
+}
+
+body div.tooltip-inner {
+  max-width:400px;
+}
+
+body div.popover {
+  max-width:450px;
+}
+
+body .modal-body.alert {
+  border-radius:0;
+}
+
+body .progress {
+  margin-bottom:0;
+}
+
+/* extend panel to contain multiple separated bodies */
+.panel-body:nth-child(n+2) {
+  border-top: 1px solid $panel-default-border;
+}
+
+/* collapsible panels must have pointer cursor to indicate clickable space*/
+.panel .panel-heading[data-toggle="collapse"] {
+  cursor: pointer;
+}
+
+/* make our statically created popup and our spinner works with Bootstrap 3.3.1 */
+#o_ajax_busy_backdrop  {
+  bottom: 0;
+  z-index:1020;
+}
+
+/* fix misplaced error icon */
+.form-control-feedback {
+  top: 10px;
+}
+.form-horizontal .has-feedback .form-control-feedback {
+  top: 10px;
+}
+
+.btn.btn-primary.o_disabled {
+  color: $btn-primary-color !important;
+}
+
+
+body .progress-bar {
+  &[aria-valuenow="1"], &[aria-valuenow="2"] {
+    min-width: 1px;
+  }
+}
+
+/* typically in course rights table*/
+td.text-left>div.form-inline>label.checkbox-inline>input[type='checkbox'] {
+  position: relative;
+}
+
+/* http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685 */
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell;
+  }
+}
+
+/*
+	iOS: prevent browser zoom when selecting a form (iOS zooms when input element font size < 16px but does not zoom back)
+	https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone
+	https://stackoverflow.com/questions/30102792/css-media-query-target-only-ios-devices
+*/
+@media screen and (max-width: 768px) {
+  @supports (-webkit-overflow-scrolling: touch) {
+    .form-control,
+    .ui-widget input, .ui-widget select, .ui-widget textarea {
+      font-size: 16px;
+    }
+  }
+}
+

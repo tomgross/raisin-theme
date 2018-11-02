@@ -1,0 +1,202 @@
+.o_form{
+	.o_desc {
+		@extend %o_note;
+	}
+	.o_warning {
+		@extend %o_warning;
+	}
+	.o_info {
+		@extend %o_info;	
+	}
+
+	/* as of 10.4 the mandatory icon is left from the label to make place for the help o_form_chelp */
+	.o_icon_mandatory {
+		margin-right: 0.25em;
+	}
+
+	/* context help for input element, right from label */
+	.o_form_chelp {
+		padding-left: 0.25em;
+		margin-right: -1.25em;	
+	}
+	
+	/* example, positioned below the input field */	
+	.o_form_example {
+		font-size: 90%;	
+	}
+		
+	.o_error {
+		margin-top: 1px;
+		margin-bottom: 0;
+		padding: 10px;
+	}	
+	
+	hr.o_spacer_noline {
+		border-top: 1px solid transparent;
+	}
+
+	hr.o_spacer,
+	hr.o_spacer_noline {
+		&.form {
+			/* there is already enough space in the form by the wrapper divs */
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+	}
+	
+	.form-group.o_omit_margin {
+		margin-bottom: 0;
+	}
+	
+	/* date chooser */
+	.o_date  {
+		position: relative;
+		padding-right: $input-height-base;
+	}
+	
+	.o_date.form-inline .form-group  {
+		margin-left: 0;
+	}
+	
+	input.o_date_ms {
+		width: 3em;
+	}
+	
+	.o_date.form-inline .o_date_ms.form-group {
+		margin-left: 25px;
+	}
+	
+	.has-feedback .o_date.form-inline .form-control.o_date_ms {
+		padding-right: 0;
+	}
+	
+	.o_form_element.form-inline .o_form_element.form-group {
+		margin-left: 25px;
+	}
+	
+	.input-group.o_date_picker {
+		width: 12em;
+	}
+	
+	/* file chooser */
+	.o_filepreview {
+		img {
+			@extend .img-thumbnail;
+		}
+		margin-bottom: floor($line-height-computed / 2);
+	}
+	.o_fileinput {
+		cursor: pointer;
+		position: relative;
+		/* the fake chooser is what the user sees. this is on layer 1, only for display */
+		.o_fakechooser {
+			position: relative;
+			z-index: 1; 		
+		}
+		/* real file chooser is transparent but on layer 2, click events trigger realchooser, not fakechooser */
+		.o_realchooser { 
+			position: absolute; 
+			top: 0; right: 0;
+			z-index: 2; 
+			@include opacity(0); /* this is the magic: visually don't show the input element, but nevertheless catch click events */
+		}
+		.o_realchooser.o_chooser_with_delete {
+			right: 38px;
+		}
+	}
+	/* hide error icon for file element - clash with file element controls */
+	.o_fileElement.has-error .o_icon_error.form-control-feedback {
+		display: none;
+	}
+	
+	.form-control.textarea.o_fixed_font_with {
+		resize: vertical !important;
+		font-family: $font-family-monospace;
+	}
+	
+	.form-control.textarea_disabled.o_fixed_font_with {
+		white-space: pre-wrap;
+		height: auto;
+		font-family: $font-family-monospace;
+		color: $input-color !important;
+		background: $input-bg-disabled;
+	}
+	
+	/* disabled text areas are rendered in div's for improved printing and layouting features */
+	.form-control.textarea_disabled {
+		resize: both;
+		overflow: auto;	
+		white-space: pre-wrap;
+		background: $input-bg-disabled;
+	}
+}
+
+/* centered form labels are still left aligned */
+.o_centered_form {
+	text-align: center;
+	fieldset.o_form {
+		display: inline-block;
+		text-align: left;
+	}
+}
+
+
+/* choice element */
+.o_choice_checkrow,
+.o_choice_textrow {
+	vertical-align: text-top;
+	padding-bottom: 2px;
+}
+.o_choice_textrow {
+	padding-left: 1em;
+}
+.o_togglecheck a {
+	white-space: nowrap;
+}
+
+.o_catalog {
+	.o_catalog_delete_img {
+		position: relative; 
+		top: -0.5em;
+	}
+}
+
+.o_button_dirty {
+	@include button-variant($o-button-dirty-color, $o-button-dirty-bg, $o-button-dirty-border);
+}
+
+/* TOGGLE SLIDERS */
+.o_button_toggle {
+	border: 1px solid $o-toggle-border-color;
+	@include border-top-radius($o-toggle-size/2 + 1px);
+	@include border-bottom-radius($o-toggle-size/2 + 1px);
+	background: $o-toggle-bg;
+	display: inline-block;
+	height: $o-toggle-size + 2px;
+	line-height: $o-toggle-size;
+	font-size: $o-toggle-size;
+	text-align: left;
+	padding: 0 0.5em 0 1px;
+	margin: 0;
+	@extend %o_undecorated;
+	
+	i {
+		color: $o-toggle-off-color;
+		text-shadow: 1px 0 2px rgba(0,0,0,.25);		
+	}	
+	span {
+		line-height: $o-toggle-size;
+		vertical-align: top;		
+		font-size: 60%;
+		color: $o-toggle-text-color;
+		text-transform: uppercase;
+	}
+	&.o_on {
+		text-align: right;
+		padding: 0 1px 0 0.5em;
+		i {
+			color: $o-toggle-on-color;
+			text-shadow: -1px 0 2px rgba(0,0,0,.25);
+		}	
+	}
+}

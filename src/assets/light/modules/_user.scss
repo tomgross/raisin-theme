@@ -1,0 +1,37 @@
+.o_user_infos {
+	position:relative;
+	
+	.o_user_portrait {
+		position:absolute;
+		top:0;
+		left:15px;
+		width:100px;
+		height:100px;
+	} 
+	.o_user_infos_inner {
+		margin:0 30px 0 100px;
+	}
+	
+	.o_user_infos_inner table {
+		margin:0 30px 15px 30px;
+	}
+}
+
+.o_useradmin .o_user_infos .o_user_infos_inner {
+	margin-right: 45px;
+}
+
+div.o_skype_button {
+	display:inline-block;
+	p {
+		margin: 0 0 0 0;	
+		a img {
+			margin:0 !important;
+			vertical-align:middle !important;
+		}
+	}
+}
+
+.o_useradmin div#o_main_toolbar.o_toolbar {
+	margin-top: 0px;
+}

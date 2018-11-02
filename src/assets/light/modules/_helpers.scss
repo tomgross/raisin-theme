@@ -1,0 +1,410 @@
+/* ------------------------------------------------------------- */
+/* block and wrapper styles mainling for spacing and positioning */
+/* ------------------------------------------------------------- */
+
+/* a block of content that should have margins like a paragraph */
+.o_block_bottom, %o_block_bottom {
+	margin-bottom: 1em;
+}
+.o_block_top, %o_block_top {
+	margin-top: 1em;
+}
+.o_block, %o_block {
+	@extend %o_block_top;
+	@extend %o_block_bottom;
+}
+.o_block_small_bottom, %o_block_small_bottom {
+	margin-bottom: 0.5em;
+}
+.o_block_small_top, %o_block_small_top {
+	margin-top: 0.5em;
+}
+.o_block_small, %o_block_small {
+	@extend %o_block_small_top;
+	@extend %o_block_small_bottom;
+}
+.o_block_large_bottom, %o_block_large_bottom {
+	margin-bottom: 2em;
+}
+.o_block_large_top, %o_block_large_top {
+	margin-top: 2em;
+}
+.o_block_large, %o_block_large {
+	@extend %o_block_large_top;
+	@extend %o_block_large_bottom;
+}
+.o_block_move_up {
+	margin-top: -1em;
+}
+.o_block_move_up_small {
+	margin-top: -0.5em;
+}
+.o_block_move_up_large {
+	margin-top: -2em;
+}
+.o_block_inline, %o_block_inline {
+	display: inline-block;
+	vertical-align: top;
+}
+.o_block_inline_left, %o_block_inline_left {
+	@extend %o_block_inline;
+	margin-left: 0.5em;
+}
+
+.o_block_inline_right, %o_block_inline_right {
+	@extend %o_block_inline;
+	margin-right: 0.5em;
+}
+.o_block_inline_both {
+	@extend %o_block_inline_left;
+	@extend %o_block_inline_right;
+}
+
+/* vertical and horizontal centered block: add wrappern and place content in wrapper */
+.o_block_centered_wrapper {
+	display: table; 
+	width: 100%; 
+	height: 100%;
+}
+.o_block_centered_content {
+	display: table-cell; 
+	vertical-align: middle; 
+	text-align: center;
+}
+
+/* content block with a full-scale background image (fat media style) */
+.o_block_imagebg {
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	span {
+		padding: 2px;
+		background-color: $o-imagebg-text-background;
+	}	
+	
+	h1, h2, h3, h4, h5,
+	p {
+		padding: 2px;
+		background-color: $o-imagebg-text-background;
+		display: inline-block;
+		&:after {
+			content: ' ';
+			display: block;
+		}
+	}	
+}
+
+
+/* overflowing content that should have scrollbar when content overflows available space */
+.o_scrollblock, %o_scrollblock {
+	/* this must stay on "auto", change to "hidden" and the everything goes to hell */
+	overflow-x: auto;  
+	overflow-y: hidden;
+	/* allow scrolling of wrapped iframe on mobile devices */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;	
+}
+
+/* block for multiple buttons, center aligned (default) and right aligned when in header wrapper */
+.o_button_group {
+	@extend %o_block;
+	text-align: center;
+	a, input, button, .btn-group {
+		margin-right: 5px;		
+		margin-bottom: 0.5em;		
+		&:last-child {
+			margin-right: 0;		
+		}
+	}
+	.btn-group {
+		a, input, button {
+			margin-right: 0;		
+			margin-bottom: 0;		
+		}	
+	}	
+	.dropdown-menu {
+		text-align: left;	
+	}
+}
+/* use together with o_button_group to have buttons left or right aligned */
+.o_button_group_left {
+	text-align: left;
+}
+.o_button_group_right {
+	text-align: right;
+}
+.o_button_group_top {
+	margin-top: 0;
+}
+/* use as wrapper when buttons should be right aligned next to a title */
+.o_header_with_buttons {
+	@include clearfix();
+	@extend %o_block_bottom;
+	h1, h2, h3, h4, h5, h6 {
+		display: inline-block;
+	}
+	.o_button_group {
+		margin-bottom: 0;
+		float: right;
+	}
+	/* optimize for header spacing */
+	h1 +.o_button_group {
+			margin-top: ($line-height-computed * 1.4);
+	}	
+	h2 +.o_button_group {
+			margin-top: ($line-height-computed * 1.2);
+	}	
+	h3 +.o_button_group {
+			margin-top: ($line-height-computed);
+	}	
+	h4 +.o_button_group {
+			margin-top: ($line-height-computed / 2);
+	}	
+	h5 +.o_button_group {
+			margin-top: ($line-height-computed / 3);
+	}	
+	h6 +.o_button_group {
+			margin-top: ($line-height-computed / 4);
+	}	
+}
+/* special case for no-margin headers in content area */
+#o_main_center .o_header_with_buttons h2 +.o_button_group {
+	margin-top: 0;	
+}
+
+.panel-heading.o_header_with_buttons {
+	margin-bottom: 0;
+}
+
+/* minimized text-style buttons */
+.o_button_textstyle {
+	&:before {content:'['}
+	&:after {content:']'}
+}
+
+
+
+.panel-imagebg {
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	&.panel-default>.panel-heading {
+		background-color: $o-imagebg-text-background;
+		border-bottom: transparent;
+	}
+	.panel-body span {
+		padding: 2px;
+		background-color: $o-imagebg-text-background;
+	}	
+}
+
+/* Placeholder panel, used to indicate that there is something to be added */
+.panel-placeholder {
+	border-width: $o-panel-placeholder-border-width;
+	border-style: dashed;
+	border-color: $o-panel-placeholder-border-color;
+	border-radius: $o-panel-placeholder-border-radius;
+	
+	.panel-body {
+		padding: $o-panel-placeholder-padding; 
+		&:nth-child(n+2) {
+			border-top: none;
+		}	
+		h3:nth-child(1),
+		h4:nth-child(1),
+		h5:nth-child(1) {
+			margin-top: 0;
+		}
+				
+		.o_button_group {
+			margin-bottom: 0;
+		}
+	}
+	.panel-heading {
+		border-top-right-radius: ($o-panel-placeholder-border-radius - $o-panel-placeholder-border-width);
+		border-top-left-radius: ($o-panel-placeholder-border-radius - $o-panel-placeholder-border-width);
+		border-width: $o-panel-placeholder-border-width;
+		border-style: dashed;
+		border-color: $o-panel-placeholder-border-color;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		color: $o-panel-placeholder-color;
+		font-weight: $o-panel-placeholder-font-weight;
+	}
+	.panel-footer {
+		border-bottom-right-radius: ($o-panel-placeholder-border-radius - $o-panel-placeholder-border-width);
+		border-bottom-left-radius: ($o-panel-placeholder-border-radius - $o-panel-placeholder-border-width);
+		border-width: $o-panel-placeholder-border-width;
+		border-style: dashed;
+		border-color: $o-panel-placeholder-border-color;
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+	}
+}
+
+/* ---------------------------------------------------------- */
+/* general content styles for fonts, links and other elements */
+/* ---------------------------------------------------------- */
+
+/* font sizes */
+.o_xsmall, %o_xsmall {
+	font-size: ceil($font-size-small * .9);
+}
+.o_small, %o_small {
+	font-size: $font-size-small;
+}
+.o_large, %o_large {
+	font-size: $font-size-large;
+}
+.o_xlarge, %o_xlarge {
+	font-size: ceil($font-size-large * 1.1);
+}
+
+/* disabled elements */
+.o_disabled, %o_disabled {
+	color: $o-content-disabled-color !important;
+	&:hover{
+		color: $o-content-disabled-color !important;
+	}
+	@extend %o_undecorated;
+	cursor: default;
+}
+/* dimmed text */
+.o_dimmed, %o_dimmed { 
+	@include opacity(.4);
+}
+/* selected text */
+.o_selected, %o_selected { 
+	font-weight: bold; 
+}	
+/* deleted text */
+.o_deleted, %o_deleted { 
+	text-decoration: line-through;
+}	
+/* highlight a row on hover event */
+.o_highlight_on_hover:hover { 
+	background-color: $table-bg-hover;
+}
+	
+/* clickable elements that should indicate this with a cursor change */
+.o_clickable, %o_clickable {
+	cursor: pointer;
+}
+
+/* colors (used in repo and else where) //FIXME: FG refactor to something meaningfull*/
+.o_ochre { color: #c8a959; }
+.o_blue { color: #12223F; }
+
+
+/* add to links that should not be decorated (system links) */ 
+.o_undecorated, %o_undecorated {
+	&:hover,&:focus {
+		text-decoration: none;
+	}
+}
+
+/* link or other copy&paste code blocks that might be to long for the screen (creates a scrollbar) */
+.o_copy_code, %o_copy_code {
+  	font-family: $font-family-monospace;
+  	padding: 2px 4px;
+  	font-size: 90%;
+  	color: $code-color;
+ 	background-color: $code-bg;
+  	border-radius: $border-radius-base;
+  	
+  	input,textarea {
+  		border: 0;
+  		width: 90%;
+  		background: transparent;
+  	}
+}
+
+/* text that should be on one line, e.g. in tables */
+.o_nowrap, %o_nowrap {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}	
+
+/* titles with subtitles */
+.o_titled_wrapper {
+	.o_content {
+		margin-top: $padding-large-vertical * 2;	
+	}
+}
+
+/* media classes for video and image component */
+.o_video, .o_video video, %o_video, .o_video_wrapper {
+	@include img-responsive(inline-block);
+	max-width: 100%;
+}
+.o_image, .o_image img, %o_image {
+	@include img-responsive(inline-block);
+	max-width: 100%;
+}
+
+/* figures with captions */
+.o_figure_caption_bottom {
+	display: inline-block;	
+	min-width: 50%;
+	figure { 
+		display: table; 
+	}
+	figcaption { 
+		display: table-caption; 
+		caption-side: bottom ; 
+		font-size: 90%;
+		font-style: italic;
+		text-align: center;
+	}
+}
+
+
+/* vertical centered helper */
+.o_image_vertical_center_helper {
+	display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    & +.o_image img {
+    	vertical-align: middle;
+    }
+}
+
+/* Hyphenated text */
+.o_with_hyphens, %o_with_hyphens {	
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+/* Offline page */
+.o_page_margins {
+	padding: 25px;
+}
+
+/* Drag&Drop cursor */
+.o_dragable, %o_dragable {
+	cursor: move; /* fallback: no `url()` support or images disabled */
+    cursor: -webkit-grab; /* Chrome 1-21, Safari 4+ */
+    cursor: -moz-grab; /* Firefox 1.5-26 */
+    cursor: grab; /* W3C standards syntax, should come least */
+    &:active {
+	    cursor: -webkit-grabbing;
+    	cursor: -moz-grabbing;
+    	cursor: grabbing;
+    }
+}
+.o_draging, %o_draging {
+    cursor: -webkit-grabbing;
+   	cursor: -moz-grabbing;
+   	cursor: grabbing;
+   	&:active {
+	    cursor: -webkit-grabbing;
+    	cursor: -moz-grabbing;
+    	cursor: grabbing;
+    }
+ }

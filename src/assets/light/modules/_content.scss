@@ -1,0 +1,71 @@
+/*
+ * =================================================
+ *  
+ * Content styles for OpenOLAT
+ *   
+ * @author gnaegi,  www.frentix.com
+ * @date April 2014
+ *
+ * Please also read themes.README!
+ *
+ * This file is compiled to a separate CSS-file as 
+ * well as included as a module to the main style. The 
+ * separate CSS will be be included to the tinyMCE
+ * HTML editor and injected into iframes that display
+ * learning content. 
+ *  =================================================
+ */
+
+/* 1) Override some styles from scaffolding */
+
+body {
+  font-family: $o-content-font-family-base;
+  font-size: $o-content-font-size-base;
+  line-height: $o-content-line-height-base;
+  color: $o-content-text-color;
+  background-color: $o-content-body-bg;
+}
+
+a {
+  color: $o-content-link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $o-content-link-hover-color;
+    text-decoration: $o-content-link-decoration;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+h1 { 
+	color: $o-content-h1-color;
+}
+h2 { 
+	color: $o-content-h2-color;
+}
+h3 { 
+	color: $o-content-h3-color;
+}
+h4 { 
+	color: $o-content-h4-color;
+}
+h5 { 
+	color: $o-content-h5-color;
+}
+h5 { 
+	color: $o-content-h5-color;
+}
+hr {
+	border-top: $o-content-hr-size solid $o-content-hr-color;
+}
+
+
+/* 2) OpenOLAT specific styles /* 
+
+/* add all styles that are created by html editor but can also be rendered in 
+   main window, not in iframe (e.g. forum post, blog entry) */
+@import "content_embedded";

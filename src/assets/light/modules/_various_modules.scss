@@ -1,0 +1,735 @@
+/* HELP, context sensitive */
+a.o_chelp {
+	display: inline-block;
+	padding: 1px 3px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	font-size: $o-chelp-font-size;
+	font-weight: $o-chelp-font-weight;
+	line-height: floor($o-chelp-font-size *1.5);
+	color: $o-chelp-color;
+	background-color: $o-chelp-bg;
+	border: 1px solid $o-chelp-border;
+	border-radius: $o-chelp-border-radius;
+	cursor: help;
+ 	@include user-select(none);
+
+	&:active,
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $o-chelp-color;
+		background-color: darken($o-chelp-bg, 8%);
+		border-color: darken($o-chelp-border, 12%);
+	}
+	
+	i {
+		font-size: $o-chelp-font-size !important;
+	}
+}
+.o_chelp_wrapper { 
+	position: relative;
+	float: right;
+	display: inline-block;
+	line-height: normal;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/* context help for input element in forms, right from label and context help tooltips */
+.o_form_chelp, 
+.o_chelp_tooltip {
+	color: $o-chelp-tooltip-color;
+}
+
+/* drawing */
+.o_draw_circle {
+	border: $o-drawing-border-width solid $o-drawing-border-color;
+	border-radius: 50%;
+	position: absolute !important;
+}
+
+.o_draw_rectangle {
+	border: $o-drawing-border-width solid $o-drawing-border-color;
+	position: absolute !important;
+}
+
+
+/* iframe display controller - used to deliver all course contents */
+.o_iframedisplay {
+	iframe {
+		width: 100%;
+	}
+}
+/* normally content is wrapped in a single page which uses an iframedisplay */
+.o_singlepage {
+	.o_edit {
+		position: absolute;
+		top: $padding-large-vertical;
+		right: $padding-base-horizontal + $padding-xs-horizontal + $line-height-computed;
+ 	}
+}
+/* the clone controller is used to pop content out of the window into another window. */
+.o_content_popup {
+	position: absolute;
+	top: $padding-large-vertical;
+	right: $padding-base-horizontal;
+}
+
+/* content packaging module */
+.o_module_cp_wrapper {
+	.o_tools {
+		position: absolute;
+		top: $padding-large-vertical;
+		right: $padding-base-horizontal;
+		text-align: right;
+		vertical-align: middle;
+		.o_search_wrapper {
+			display: inline-block;
+			position: relative;
+			top: -2px;
+	 	}
+	}
+}
+
+/* drop down menus made with OO modal dialog and not bootstrap dropdown */
+ul.o_dropdown {
+	/* revert padding from popover */
+	margin: -5px -14px;
+	.divider {
+		@include nav-divider($dropdown-divider-bg);
+	}
+	
+	> li > a {
+		display: block;
+		padding: 5px 14px;
+		clear: both;
+		font-weight: normal;
+		line-height: $line-height-base;
+		color: $dropdown-link-color;
+		background: $dropdown-bg;
+		white-space: nowrap; // prevent links from randomly breaking onto new lines
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			color: $dropdown-link-hover-color;
+			background-color: $dropdown-link-hover-bg;
+		}
+	}
+}
+
+/* SCORM module */
+.badge {
+	/* badge color */
+	&.o_scorm_org {}
+	&.o_scorm_item {}
+	&.o_scorm_completed { background-color: $state-success-text; }
+	&.o_scorm_failed { background-color: $state-danger-text; }
+	&.o_scorm_incomplete { background-color: $state-warning-text; }
+	&.o_scorm_not_attempted { background: none; }
+}
+
+/* briefcase (folder) module */
+.o_bc_empty{
+	@extend %o_important;
+}
+.o_bc_meta, .tooltip {
+	@extend %o_small;
+	h5, .o_author, .o_comment {
+		color: #fff;
+		margin: 5px 0;
+	}
+	.o_thumbnail{
+		width:200px; 
+		height:200px;
+		display: inline-block; /* render centered if title larger than image */
+		background-color: #fff;
+		margin: 0 -5px; /* remove ugly border */
+	}
+}
+
+/* HTML editor */
+.o_htmleditor {
+	.o_metadata {
+		/* match tinymce style */
+		border: 1px solid #999;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-bottom: 0;
+		background: #eee;
+		position: relative;
+		top: 1px;
+		padding: 5px;
+
+		#o_filename {
+			float: left;
+		}
+		.o_lastmodified {
+			float: right;
+			color: $text-muted;	
+			@extend %o_small;
+			line-height: $line-height-base;
+		}
+	}
+	#o_save {
+		margin-top: 10px;
+		text-align: center;
+		input {
+			margin-right: 1em;
+			&:last-child {
+				margin-right: 0;		
+			}
+		}
+	}
+}
+
+/* notifications and subscription */
+.o_notifications_news_wrapper {
+	.o_notifications_news_subscription {
+		margin: $padding-large-vertical 0;
+		h4 i {
+			display: none;
+		}
+		.o_notifications_news_context {
+			color: $text-muted;	
+		}
+		.o_notifications_news_content {
+			margin-left: 1.5em;
+			position: relative;
+			.o_icon {
+				position: absolute;
+				left: -1.5em;
+				line-height: 1.5em;
+				top: 0;
+			}
+			.o_date {
+				color: $text-muted;
+			}
+		}
+		.o_notifications_news_url {
+			margin-left: 1.5em;			
+		}
+	}
+}
+.o_noti {
+	margin: $padding-base-vertical 0 $padding-base-vertical $padding-base-horizontal;
+	float: right;
+	color: $text-muted;	
+	@extend %o_small;
+	.o_label {
+		@extend %o_undecorated;
+		color: $text-muted;	
+		cursor:help;
+	}
+	@media (max-width: $screen-xs-max) { 
+		.o_label span {
+			display: none;
+		}	
+	}
+}
+.panel-body .o_noti {
+	/* override default margin */
+	margin: 0;
+}
+
+/* Portrait image */
+.o_portrait {
+	display: inline-block;
+	img {
+		border-radius: $o-portrait-radius;
+		border: $o-portrait-border;
+		background-color: $gray-lighter;
+		background-position: 50% 50%; 
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+.o_portrait_name { 
+	margin-top: $padding-base-vertical;
+}
+.o_block_inline, .o_block_inline_right, .o_block_inline_left, .o_block_inline_both {
+	.o_portait, .o_portrait_name, .o_portrait_image {
+		display: inline-block;
+	}
+}
+
+/* Dummy user portrait (avatar) display - portrait sizes must match with DisplayPortraitManager.WIDTH_PORTRAIT_SMALLDisplayPortraitManager.WIDTH_PORTRAIT_BIG
+
+Dummy is used for registered users which have no personal avatar image. 
+- dummy is used if gender is not known
+- dummy_female is used for femal users
+- dummy_male is used for male users
+
+Anonymous is used for guest users and in anonymous chat / forum postings
+*/
+.o_portrait_avatar,
+.o_portrait_dummy,
+.o_portrait_dummy_female_big,
+.o_portrait_dummy_male_big,
+.o_portrait_anonymous 			 {width: 100px; height: 100px;}
+.o_portrait_dummy				{background-image: url('#{$o-images-path}portrait/dummy.png');}
+.o_portrait_dummy_female_big	 {background-image: url('#{$o-images-path}portrait/dummy_female_big.png');}
+.o_portrait_dummy_male_big	{background-image: url('#{$o-images-path}portrait/dummy_male_big.png');}
+.o_portrait_anonymous 			 {background-image: url('#{$o-images-path}portrait/anonymous.png'); }
+
+.o_portrait_avatar_small,
+.o_portrait_dummy_small,
+.o_portrait_dummy_female_small,
+.o_portrait_dummy_male_small,
+.o_portrait_anonymous_small 	 {width: 30px; height: 30px;}
+.o_portrait_dummy_small		{background-image: url('#{$o-images-path}portrait/dummy_small.png');}
+.o_portrait_dummy_female_small{background-image: url('#{$o-images-path}portrait/dummy_female_small.png');}
+.o_portrait_dummy_male_small	 {background-image: url('#{$o-images-path}portrait/dummy_male_small.png');}
+.o_portrait_anonymous_small 	 {background-image: url('#{$o-images-path}portrait/anonymous_small.png'); } 
+
+/* Date component, used in info course element, blog etc */
+.o_datecomp {
+	position: relative; 
+	width: $line-height-computed * 2; 
+	height: $line-height-computed + floor($line-height-computed * 1.5) + 2px; 
+	border: 1px solid $o-datecomp-border; 
+	margin-right: $padding-base-horizontal; 
+	text-align: center; 
+	vertical-align: middle; 
+	
+	div.o_year {
+		position: absolute; 
+		left: 0;
+		width: 100%;
+		top: -$line-height-computed; 
+		height: $line-height-computed; 
+		line-height: $line-height-computed; 
+		font-size: ceil($font-size-base * 0.7);
+	}
+	div.o_month {
+		height: $line-height-computed; 
+		line-height: $line-height-computed; 
+		font-size: $font-size-small; 
+		background-color: $o-datecomp-month-bg;
+		color: $o-datecomp-month-color;
+	}
+	div.o_day {
+		height: floor($line-height-computed * 1.5);
+		line-height: floor($line-height-computed * 1.5);
+		font-size: $font-size-large;
+		border-top: 1px solid $o-datecomp-border;
+		background-color: $o-datecomp-day-bg;
+		color: $o-datecomp-day-color;
+	}
+}
+.o_block_with_datecomp {
+	@extend %o_block_large; /* large to have space for year */
+	.o_head {
+		position: relative;
+		padding-left: $line-height-computed * 2 + $padding-base-horizontal;
+	}
+	.o_datecomp {
+		position: absolute;
+		top: 0.2em;
+		left: 0;		
+	}
+	.o_title {
+		margin-top: 0;
+	}
+	.o_meta {
+		color: $text-muted;
+		@extend %o_small;
+	}
+	.o_content {
+		@extend %o_block;
+		border-left: 5px solid $blockquote-border-color;
+		padding: 0 $line-height-computed;
+	}
+	.o_block_footer {
+		padding-left: $line-height-computed + 5px;
+	}
+}
+
+/* Efficiency statement and certificates */
+ul.o_certificates li {
+	padding: 5px 0;
+	
+	a.o_sel_certificate_delete {
+		padding-left: 2em;
+	}
+}
+
+
+/* Calendar */
+.o_cal_toptoolbar {
+	margin-bottom: $padding-base-vertical;
+	.o_cal_toptoolbar_help {
+		float: left;
+		margin-right: $padding-base-horizontal;
+	}
+	.o_noti {
+		margin-top:0;
+	}
+}
+.o_cal {
+	.fc-header-title h2 {
+		@extend h4;
+	}
+}
+
+/* Feed (Blog/Podcast */
+.o_feed {
+	.o_media {
+		@extend .img-thumbnail;
+	}
+	.o_date, .o_author {
+		color: $text-muted;
+	}
+	.o_subscription {
+		a {	
+			margin-right: 1.5em;
+		}
+		.form-group {
+			margin-bottom: $padding-small-vertical;
+		}
+		.form-control {
+			border: 0;
+			background: none;
+			padding: 0;
+			height: auto;
+			@include box-shadow(none);
+		}
+	}
+	.o_blog_posts {
+		.o_ratings_and_comments {
+			.o_rating_wrapper {
+				float: left;
+				.o_rating_title, .o_rating_explanation, .o_legend {
+					display: none;
+				}		
+			}
+			a.o_comments {
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+	.o_content {
+		@include clearfix();
+	}
+	.o_enclosure {
+		clear: both;
+	}
+}
+
+/* Glossary */
+.o_glossary {
+	.o_register {
+		text-align: center;
+	}
+	.o_meta {
+		font-size: 90%;
+		color: $text-muted;
+		font-style: italic;
+	}
+	dl {
+		dt {
+			&:first-letter { 
+				font-size: ceil(($font-size-base * 1.5));;
+			}
+			small {
+				color: $text-muted;
+			}
+		}
+	}
+}
+
+.o_tm_glossary { border-bottom: 1px dotted #666699 !important; }
+.o_tm_yellow { background-color: #FFFF66; }
+.o_tm_blue { background-color: #33FFFF; }
+.o_tm_red { background-color: #FF3333; }
+.o_tm_green { background-color: #99FF00; }
+
+/* Coaching */
+.o_coaching div#o_main_toolbar.o_toolbar {
+	margin-top: 0px;
+}
+
+.o_eff_statement_details .o_user_infos {
+	margin-top:20px;
+}
+
+/* Assessment */
+div.o_assessment_user_type_filter {
+	display: inline-block;
+	padding: 0.5em;
+	border: 1px solid $gray-lighter;
+	border-radius: $panel-border-radius;
+	
+	div.form-inline {
+		margin-left: 5px;
+		display: inline-block;
+	}
+}
+
+
+/* vitero */
+.vitero_iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	min-height: 60em;
+}
+
+/* Reminders rules */
+.o_reminder_rule {
+	padding: 5px 0;
+}
+
+/* Segmented view wrapper */
+.o_segments.btn-group a span {
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+}
+.o_segments_content {
+	margin-top: $line-height-computed;
+}
+
+/* Tabbed pane component */
+.o_tabbed_pane { 
+	.o_tabbed_pane_content {
+		padding: $o-tabbed-pane-padding;
+	}
+}
+
+
+
+/* toogle box, based on bootstrap collapse plugin */
+.o_togglebox_wrapper {
+	.o_opener {
+		position: relative;
+		left: -0.5em;
+		i {
+			@extend .o_icon_open_togglebox;
+		}
+		&.o_in i {
+			@extend .o_icon_close_togglebox;
+		}
+	}
+	div.o_togglebox_content {
+		position: relative;
+		@extend %o_info;
+		margin: 0;
+		.o_hide {
+			position: absolute;
+			bottom: 0.5em;
+			right: 1em;		
+			@extend %o_small;
+		}
+	}	
+}
+
+/* the old toolbox */
+.o_toolboxes {
+	ul {
+		margin: 0 0 1.5em 0;
+		padding: 0 0 0 1.5em;
+	}
+}
+
+/* QR-Code container */ 
+.o_qrcode {
+	width: 256px; 
+	height: 256px;
+}
+
+/* busy screen */
+#o_ajax_busy { 
+	position: absolute; 
+	left:50%; 
+	top: 20em;
+	margin-left: -2.5em;
+	height: 5em; 
+	width: 5em;
+	color: #fff; 
+	z-index: 1201; /* modal backdrop set to 1200 */
+	display: none;
+}	
+#o_body.o_ajax_busy {
+	cursor: busy;
+}
+
+/* error screen */
+.o_exception {
+	.o_visual {
+		position: relative;
+		/* image CC by Nomadic Lass https://www.flickr.com/photos/nomadic_lass/5329061838/ */
+		background-image: url('#{$o-images-path}lion-500x333.jpg');
+		filter: grayscale(50%);
+		-webkit-filter: grayscale(50%);
+		-moz-filter: grayscale(50%);
+		-ms-filter: grayscale(50%); 
+		-o-filter: grayscale(50%);
+		width: 500px;
+		height: 333px;
+		background-repeat:no-repeat;
+		background-position:50% 50%;		
+		background-size: contain;	
+		margin: 0 0 $padding-large-vertical $padding-large-horizontal;
+
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { 
+			width: floor(500px *0.75);
+			height: floor(333px *0.75);		
+		}
+		@media (min-width: 500px) and (max-width: $screen-xs-max) { 
+			width: floor(500px *0.5);
+			height: floor(333px *0.5);		
+		}	
+		@media (max-width: 500px){ 
+			background-size: cover;	
+		}	
+	}
+	.jumbotron h1 { 
+		color: $brand-danger;
+	}
+}
+
+/* list */
+ul.o_assessment_docs {
+	margin-bottom: 0;
+}
+ul.o_assessment_docs>li {
+	margin-bottom: 0.33em;
+}
+ul.o_assessment_docs>li:last-child {
+	margin-bottom: 0em;
+}
+
+/* personal mail box tool */
+.o_mail_message {
+	.o_mail_meta {
+		background: #fafafa;
+		border: 1px solid #eee;
+		padding: 5px 10px;
+		h3 {
+			margin-top: 0;
+		}
+	}
+	
+	.o_mail_date,
+	.o_mail_from,
+	.o_mail_recipients {
+		color: $text-muted;
+		font-size: 90%;
+		
+		.o_label {
+			font-weight: bold;
+			margin-right: 1em;
+		}
+		.o_group span {
+			font-weight: bold;
+			&:after {
+				content: ':';
+				margin-right: 0.5em;
+			}
+		}
+		i {
+			margin-left: 1em;
+		}
+
+		ul.list-inline {
+			display: inline;
+			li {
+				padding-right: 0;
+				padding-left: 0;
+			}
+		}	
+	}
+	.o_more {
+		margin-left: 1em;
+	}
+	.o_showAllLink {
+		float: right;
+		font-size: 80%;
+	}
+}	
+
+/* indicator on progress bar */
+.progress .o_progress_marker {
+	position: absolute; 
+	height: 100%;
+	top: 0;
+	width: 3px; 	
+	background: $o-progress-marker-color;
+}
+
+.progress .progress-bar {
+	text-shadow: 1px 1px 2px #000000;
+}
+
+.o_progress_label_right {
+	float:left;
+	margin-right: 10px;
+}
+
+
+/* web documents */
+.o_web_content {
+	padding-bottom: floor($grid-gutter-width / 2);
+}
+
+/* label */
+%o_labeled,
+.o_labeled {
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	font-size: 75% !important;
+	font-weight: bold !important;
+	line-height: 1;
+	white-space: nowrap;
+	border: 1px solid;
+	border-radius: 3px;
+	padding: 2px 5px;
+	background-color: $o-labeled_bg-color;
+	color: $o-labeled_color;
+}
+.o_labeled_light {
+	@extend %o_labeled;
+	background-color: 	$o-labeled-light-bg-color;
+ }
+ .dropdown-menu.o_labeled {
+ 	background-color: inherit;
+ }
+ 
+ /* Multiselect dropdown element */
+ .o_ms_button {
+ 	max-width: 100%;
+ 	width: 100%;
+ 	display: flex;
+	span:not(.o_ms_carret) {
+ 		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap; 
+	}
+	.o_ms_carret {
+		margin: auto 0 auto auto;
+	}
+}
+.o_ms_list {
+	width: 100%;
+	height: auto;
+	max-height: 300px;
+	overflow-x: hidden;
+	top: unset;
+}
+
+
+/* disclaimer formatting */
+.o_disclaimer .o_disclaimer_content {
+	max-height: 50vh;
+	overflow: auto;
+	font-family: $font-family-monospace;
+	background: #fbfbfb;
+	padding: 10px;
+	border: 1px solid #c2c2c2;
+}

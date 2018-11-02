@@ -1,0 +1,316 @@
+
+/*
+ * Overwrite jquery ui dialog and datepicker
+ */
+ 
+.ui-widget {
+	font-family: $font-family-base;
+	font-size: 100%;
+}
+
+.ui-widget-header {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom:1px solid #eee;
+	
+	background: #fff;
+	font-weight: bold;
+}
+
+.ui-icon, .ui-widget-content .ui-icon, .ui-widget-header .ui-icon,
+.ui-state-default .ui-icon, .ui-state-hover .ui-icon, .ui-state-focus .ui-icon,
+.ui-state-active .ui-icon, .ui-state-highlight .ui-icon, .ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background: none;
+	background-image: none;
+}
+
+.ui-dialog {
+	@include box-shadow(0px 1px 8px -1px rgba(0,0,0,.35));
+	background-color: $o-dialog-window-bg;
+	
+	.ui-widget-header {
+		.ui-dialog-title {
+			color: $o-dialog-header-color;
+		  	font-weight: $o-dialog-header-font-weight;
+			font-family: $headings-font-family;
+		  	line-height: $headings-line-height;
+		}
+		.ui-dialog-titlebar-close:before {
+			content: $fa-var-times !important;
+		}
+
+		.ui-dialog-titlebar-close {
+			display: inline-block;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 100%;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			
+			span {
+				display: none;
+			}
+		}
+		
+		.ui-button.ui-corner-all {
+			border: none !important;
+			background: #fff !important;
+			float: right;
+		}
+	}
+
+	.ui-widget-content {
+		border-color: #fff;
+		padding: 5px;
+		overflow: auto;
+		background: white !important;
+	}
+	
+	.ui-dialog-titlebar {
+		padding: 4px 7px 4px 7px;
+		background-color: $o-dialog-window-bar-bg !important;
+	}
+}
+
+.ui-dialog.ui-corner-all {
+	border-radius: $alert-border-radius;
+}
+
+.ui-dialog.ui-widget-content {
+	border: 1px solid transparent;
+}
+
+.ui-dialog.o_modal-ui {
+	/* in any case, never make dialog smaller than browser window */
+	max-width: 100vw;
+	max-height: 100vh;
+
+	div.ui-dialog-buttonpane {
+		display:none;
+	}
+	
+	/* on small screens set dimensions to take entire screen  */
+	@media (max-width: $screen-xs-max) { 
+		height: 100vh !important;	
+		width: 100vw !important;	
+		
+		div.ui-dialog-content {
+			height: 90vh !important;	
+		}
+	}	
+}
+
+/*
+ * slider
+ */
+
+.ui-slider.ui-slider-horizontal.ui-widget-content {
+	border-color: $o-slider-border;
+	background: $o-slider-background;
+	
+	&.ui-state-disabled {
+		opacity: 0.65;
+	}
+}
+
+.o_has_value.ui-slider.ui-slider-horizontal.ui-widget-content {
+	.ui-slider-handle {
+		border: 1px solid $o-slider-handler-border-color;
+		background-image: none;
+		background-color: $o-slider-handler-background-color;
+	}
+}
+
+.o_no_value.ui-slider.ui-slider-horizontal.ui-widget-content {
+	.ui-slider-handle {
+		border: 3px solid $o-slider-handler-border-color;
+		background-image: none;
+	}
+}
+
+/*
+ * datepicker
+ */
+ 
+.ui-datepicker {
+	z-index: 2000 ! important;
+	@include box-shadow(0px 1px 5px -1px rgba(0,0,0,.15));
+	
+	.ui-widget-header {
+		.ui-corner-all, .ui-datepicker-next.ui-corner-all {
+			border: none !important;
+			background: #fff !important;
+		}
+
+		.ui-icon.ui-icon-circle-triangle-e:before {
+			content: $fa-var-arrow-right;
+			font-weight: normal;
+			color: black;
+		}
+		.ui-icon.ui-icon-circle-triangle-w:before {
+			content: $fa-var-arrow-left;
+			font-weight: normal;
+			color: black;
+		}
+		
+		.ui-icon.ui-icon-circle-triangle-e, .ui-icon.ui-icon-circle-triangle-w {
+			font-family: 'FontAwesome';
+			display:inline-block;
+			background-image:none;
+			background-position:0 0;
+			font-weight: normal;
+			text-indent:0;
+			color: white;
+		}
+		
+		.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover {
+			top: 2px;
+		}
+	}
+	
+	.ui-state-default {
+		background: #eee;
+	}
+	
+	.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+		border: 1px solid $btn-primary-border;
+		background: $btn-primary-bg;
+		color: $btn-primary-color;
+	}
+}
+
+.ui-datepicker.ui-corner-all {
+	border-radius: $alert-border-radius;
+}
+
+.ui-datepicker.ui-widget-content {
+	border: 1px solid transparent;
+}
+/*
+ * Some class for the movie plugin for tiny mce
+ */
+
+// override the label in _forms.scss of bootstrap
+label.mce-label {
+  	display: inline;
+	max-width: 150px;
+	margin-bottom: 0;
+	font-weight: normal;
+}
+
+.o_richtext_mce_without_path {
+	.mce-statusbar {
+		border: none;
+	}
+
+	.mce-path {
+    	display: none !important;
+	}
+	
+	.mce-menubtn.mce-fixed-width span {
+		width: auto;
+	}
+}
+
+.o_richtext_mce>.o_richtext_mce_modes {
+	text-align: right;
+	padding-right: $input-border-radius;
+	a {
+		border-bottom: none;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+i.mce-ico.mce-i-media, i.mce-ico.mce-i-movie, i.mce-ico.mce-i-help, i.mce-ico.mce-i-gaptext,i.mce-ico.mce-i-gapnumerical, i.mce-ico.mce-i-hottext, i.mce-ico.mce-i-edit {
+	display: inline-block;
+	font: normal normal normal #{$fa-font-size-base}/1 FontAwesome; // shortening font declaration
+	font-size: inherit; // can't have font-size inherit on line above, so need to override
+	text-rendering: auto; // optimizelegibility throws things off #1094
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0); // ensures no half-pixel rendering in firefox
+}
+
+i.mce-ico.mce-i-media:before {
+	content: $fa-var-file-movie-o;
+}
+
+i.mce-ico.mce-i-movie:before {
+	content: $fa-var-file-video-o;
+}
+
+i.mce-ico.mce-i-gaptext:before {
+	content: $fa-var-ellipsis-h;
+}
+i.mce-ico.mce-i-gapnumerical:before {
+	content: $fa-var-calculator;
+}
+i.mce-ico.mce-i-hottext:before {
+	content: $fa-var-fire;
+}
+i.mce-ico.mce-i-math:before {
+	content: '\03A3';
+}
+
+i.mce-ico.mce-i-edit:before {
+	content: $fa-var-edit;
+}
+
+i.mce-ico.mce-i-help {
+	width: 9px;
+	height: 9px;
+	padding-top:1px;
+}
+i.mce-ico.mce-i-help:before {
+	content: $fa-var-question-circle;
+	color: white;
+}
+
+.mce-tabs span.o_chelp_wrapper {
+	float:right;
+	margin:5px;
+}
+
+.mce-wordcount:after {
+	display: inline-block;
+	font: normal normal normal #{$fa-font-size-base}/1 FontAwesome; // shortening font declaration
+	font-size: inherit; // can't have font-size inherit on line above, so need to override
+	text-rendering: auto; // optimizelegibility throws things off #1094
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0); // ensures no half-pixel rendering in firefox
+	content: $fa-var-question-circle;
+}
+
+.mce-danger .mce-wordcount:after {
+	color: $brand-danger;
+	content: $fa-var-exclamation-circle;
+}
+
+.mce-statusbar.mce-danger {
+	background-color: $alert-danger-bg;
+}
+
+.mce-textbox.mce-danger {
+	border-color: darken($alert-danger-bg, 25%);
+	background-color: $alert-danger-bg;
+}
+
+/*
+ * Overwrite some class of typehead needed by the flexi table
+ */
+div.o_table_search span.twitter-typeahead {
+	display: table-cell;
+	padding-top: 3px;
+}
+
+//tags input
+.tag.label.label-info {
+	margin-right: 3px;
+}
+
+

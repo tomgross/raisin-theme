@@ -18,7 +18,7 @@
 
 </head>
 
-<body onload="o_start();" id="o_body" class=" o_lang_en $pageSizeCss">
+<body id="o_body" class=" o_lang_en $pageSizeCss">
 
 
 <!-- START olatContentPanel -->
@@ -26,49 +26,25 @@
 <a href="#o_main_container" class="sr-only">Skip to main content</a>
 <div id="o_beta_logo"></div>
 
-<div id="o_messages" class="hidden-print"><div id='o_c1000000202'><div id='o_c1000000195'><!-- empty --></div></div></div>
+<div id="o_messages" class="hidden-print">
+  {{#block "status"}}
+  {{/block}}
+</div>
 
 <div id="o_header_wrapper">
   <div id="o_header_container" class="o_container_offcanvas container-fluid">
     <div id="o_logo"></div>
     <div id="o_right_logo"></div>
-
+    {{#block "headerComponent"}}
+    {{/block}}
   </div>
 </div>
 
 <div id="o_offcanvas_right" class="o_navbar o_navbar-offcanvas " role="navigation">
   <a href="javascript:;" class="o_offcanvas_close" title="Close"><i class='o_icon o_icon_close o_icon-lg'> </i> </a>
   <div id="o_offcanvas_right_container" class="o_navbar-collapse">
-    <div id='o_c1000000290'><ul id="o_c1000000262" class="nav o_navbar-nav o_navbar-right o_sel_menu_tools">
-      <li role="presentation" class="dropdown-header">Personal tools</li>
-      <li><a class=" o_sel_user_tools-calendar" id="o_c1000000264"  href="/olat/auth/1%3A1%3A1000000264%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000263/" onclick="o_XHREvent('/olat/auth/1:1:1000000264:2:1/',true,true,'cid','personal.tool.alt.1000000263'); return false;"  title="Calendar"><i class='o_icon o_icon-fw o_icon_calendar o_icon-lg'></i> <span>Calendar</span></a></li>
-      <li><a class=" o_sel_user_tools-notifications" id="o_c1000000266"  href="/olat/auth/1%3A1%3A1000000266%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000265/" onclick="o_XHREvent('/olat/auth/1:1:1000000266:2:1/',true,true,'cid','personal.tool.alt.1000000265'); return false;"  title="Subscriptions"><i class='o_icon o_icon-fw o_icon_notification o_icon-lg'></i> <span>Subscriptions</span></a></li>
-      <li><a class=" o_sel_user_tools-userfolder" id="o_c1000000268"  href="/olat/auth/1%3A1%3A1000000268%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000267/" onclick="o_XHREvent('/olat/auth/1:1:1000000268:2:1/',true,true,'cid','personal.tool.alt.1000000267'); return false;"  title="Personal folder"><i class='o_icon o_icon-fw o_bc_icon o_icon-lg'></i> <span>Personal folder</span></a></li>
-      <li><a class=" o_sel_user_tools-notelist" id="o_c1000000270"  href="/olat/auth/1%3A1%3A1000000270%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000269/" onclick="o_XHREvent('/olat/auth/1:1:1000000270:2:1/',true,true,'cid','personal.tool.alt.1000000269'); return false;"  title="Notes"><i class='o_icon o_icon-fw o_icon_notes o_icon-lg'></i> <span>Notes</span></a></li>
-      <li><a class=" o_sel_user_tools-effstatements" id="o_c1000000272"  href="/olat/auth/1%3A1%3A1000000272%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000271/" onclick="o_XHREvent('/olat/auth/1:1:1000000272:2:1/',true,true,'cid','personal.tool.alt.1000000271'); return false;"  title="Evidences of achievement"><i class='o_icon o_icon-fw o_icon_certificate o_icon-lg'></i> <span>Evidences of achievement</span></a></li>
-      <li><a class=" o_sel_user_tools-booking" id="o_c1000000276"  href="/olat/auth/1%3A1%3A1000000276%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000275/" onclick="o_XHREvent('/olat/auth/1:1:1000000276:2:1/',true,true,'cid','personal.tool.alt.1000000275'); return false;"  title="Bookings"><i class='o_icon o_icon-fw o_icon_booking o_icon-lg'></i> <span>Bookings</span></a></li>
-      <li><a class=" o_sel_user_tools-otherusers" id="o_c1000000278"  href="/olat/auth/1%3A1%3A1000000278%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000277/" onclick="o_XHREvent('/olat/auth/1:1:1000000278:2:1/',true,true,'cid','personal.tool.alt.1000000277'); return false;"  title="Other users"><i class='o_icon o_icon-fw o_icon_search o_icon-lg'></i> <span>Other users</span></a></li>
-      <li><a class=" o_sel_user_tools-PortfolioV2" id="o_c1000000287"  href="/olat/auth/1%3A1%3A1000000287%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000286/" onclick="o_XHREvent('/olat/auth/1:1:1000000287:2:1/',true,true,'cid','personal.tool.alt.1000000286'); return false;"  title="Portfolio 2.0"><i class='o_icon o_icon-fw o_ep_icon o_icon-lg'></i> <span>Portfolio 2.0</span></a></li>
-      <li><a class=" o_sel_user_tools-Mail" id="o_c1000000289"  href="/olat/auth/1%3A1%3A1000000289%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000288/" onclick="o_XHREvent('/olat/auth/1:1:1000000289:2:1/',true,true,'cid','personal.tool.alt.1000000288'); return false;"  title="E-mail"><i class='o_icon o_icon-fw o_icon_mail o_icon-lg'></i> <span>E-mail</span></a></li>
-      <li role="presentation" class="divider"></li>
-      <li role="presentation" class="dropdown-header">Configuration</li>
-      <li><a class=" o_sel_user_tools-profil" id="o_c1000000274"  href="/olat/auth/1%3A1%3A1000000274%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000273/" onclick="o_XHREvent('/olat/auth/1:1:1000000274:2:1/',true,true,'cid','personal.tool.alt.1000000273'); return false;"  title="Profile"><i class='o_icon o_icon-fw o_icon_user o_icon-lg'></i> <span>Profile</span></a></li>
-      <li><a class=" o_sel_user_tools-mysettings" id="o_c1000000280"  href="/olat/auth/1%3A1%3A1000000280%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000279/" onclick="o_XHREvent('/olat/auth/1:1:1000000280:2:1/',true,true,'cid','personal.tool.alt.1000000279'); return false;"  title="System settings"><i class='o_icon o_icon-fw o_icon_settings o_icon-lg'></i> <span>System settings</span></a></li>
-      <li><a class=" o_sel_user_tools-mypassword" id="o_c1000000282"  href="/olat/auth/1%3A1%3A1000000282%3A2%3A1%3Acid%3Apersonal.tool.alt.1000000281/" onclick="o_XHREvent('/olat/auth/1:1:1000000282:2:1/',true,true,'cid','personal.tool.alt.1000000281'); return false;"  title="Password"><i class='o_icon o_icon-fw o_icon_password o_icon-lg'></i> <span>Password</span></a></li>
-      <li role="presentation" class="divider"></li>
-      <li role="presentation" class="dropdown-header">System</li>
-      <li><a class="" href="https://confluence.openolat.org/display/OO130EN/" target="oohelp" title="Start OLAT Help"><i class="o_icon o_icon_help o_icon-lg"> </i> <span>Help</span></a></li>
-      <li><a href="javascript:o_doPrint();" title="Print this page" >
-        <i class="o_icon o_icon_print o_icon-lg"></i>
-        <span>Print</span>
-      </a></li>
-      <li role="presentation" class="divider"></li>
-      <li>
-        <a href="/olat/auth/1%3A1%3A1000000262%3A2%3A0%3Acid%3Alogout/" class="o_logout" title="Log off from OLAT" onclick="if (window.olatonunload) {olatonunload();}">
-          <i class="o_icon o_icon_logout o_icon-fw"></i> Log out
-        </a>
-      </li>
-    </ul></div>
+    {{#block "menuComponent"}}
+    {{/block}}
   </div>
 </div>
 <a id='o_top'></a>
@@ -77,379 +53,26 @@
     <a class="o_navbar-brand " href="" title="OpenOLAT" ></a>
 
     <div class="o_collapse o_navbar-collapse">
-      <ul id="o_c1000000199" class="o_navbar_sites nav o_navbar-nav">
-        <li class=' active  o_site_repository'>
-          <a class="" id="o_c1000000206" accesskey="r"  href="/olat/auth/1%3A1%3A1000000206%3A4%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000206:4:1/',true,true,'cid','t'); return false;"  title="Courses"><span>Courses</span></a>
-        </li>
-        <li class=' o_site_groups'>
-          <a class="" id="o_c1000000208" accesskey="g"  href="/olat/auth/1%3A1%3A1000000208%3A3%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000208:3:1/',true,true,'cid','t'); return false;"  title="Work with your personal learning and project groups."><span>Groups</span></a>
-        </li>
-        <li class=' o_site_coaching'>
-          <a class="" id="o_c1000000210"  href="/olat/auth/1%3A1%3A1000000210%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000210:2:1/',true,true,'cid','t'); return false;"  title="Coaching"><span>Coaching</span></a>
-        </li>
-        <li class=' o_site_author_env'>
-          <a class="" id="o_c1000000212" accesskey="r"  href="/olat/auth/1%3A1%3A1000000212%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000212:2:1/',true,true,'cid','t'); return false;"  title="Manage your learning resources"><span>Authoring</span></a>
-        </li>
-        <li class=' o_site_qpool'>
-          <a class="" id="o_c1000000214" accesskey="p"  href="/olat/auth/1%3A1%3A1000000214%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000214:2:1/',true,true,'cid','t'); return false;"  title="Question pools and shares"><span>Question bank</span></a>
-        </li>
-        <li class=' o_site_catalog_admin'>
-          <a class="" id="o_c1000000216" accesskey="c"  href="/olat/auth/1%3A1%3A1000000216%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000216:2:1/',true,true,'cid','t'); return false;"  title="Manage learning resources in the catalog"><span>Catalog management</span></a>
-        </li>
-        <li class=' o_site_curriculum_admin'>
-          <a class="" id="o_c1000000218" accesskey="c"  href="/olat/auth/1%3A1%3A1000000218%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000218:2:1/',true,true,'cid','t'); return false;"  title="Manage the curriculum"><span>Curriculum management</span></a>
-        </li>
-        <li class=' o_site_useradmin'>
-          <a class="" id="o_c1000000220"  href="/olat/auth/1%3A1%3A1000000220%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000220:2:1/',true,true,'cid','t'); return false;"  title="Manage users and system groups"><span>User management</span></a>
-        </li>
-        <li class=' o_site_admin'>
-          <a class="" id="o_c1000000222"  href="/olat/auth/1%3A1%3A1000000222%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000222:2:1/',true,true,'cid','t'); return false;"  title="Administer this OLAT installation"><span>Administration</span></a>
-        </li>
-        <li class=' o_site_guidemo'>
-          <a class="" id="o_c1000000224"  href="/olat/auth/1%3A1%3A1000000224%3A2%3A1%3Acid%3At/" onclick="o_XHREvent('/olat/auth/1:1:1000000224:2:1/',true,true,'cid','t'); return false;"  title="gui demo"><span>gui_demo</span></a>
-        </li>
-      </ul>
-      <script type="text/javascript">
-        /* <![CDATA[ */
-        jQuery(document).trigger("oo.nav.sites.modified");
-        /* ]]> */
-      </script>
-
-      <ul id="o_c1000000200"  class="o_navbar_tabs nav o_navbar-nav">
-      </ul>
-
-      <script type="text/javascript">
-        /* <![CDATA[ */
-        jQuery(document).trigger("oo.nav.tabs.modified");
-        /* ]]> */
-      </script>
-
-      <div id='o_c1000000261'><div id="o_c1000000225" class="o_navbar_tools">
-        <ul id="o_navbar_tools_permanent" class="nav o_navbar-nav o_navbar-right">
-          <li  id="o_navbar_imclient"  class="o_navbar_tool "><div id='o_c1000000237'><div id='o_c1000000226'>	<div class="o_im_messages">
-            <div id='o_c1000000228'><div id='o_c1000000236'><div id='o_c1000000235'><!-- empty --></div></div>
-
-
-            </div>
-          </div>
-
-            <div id="o_im_status" class="dropdown">
-              <a href="#" class="o_undecorated dropdown-toggle" data-toggle="dropdown" title="Change Instant Messaging status ">
-                <i class="o_icon o_icon_status_available"></i>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><span class="o_chelp_wrapper"><a href="https://confluence.openolat.org/display/OO130EN/Chat" class="o_chelp" target="_blank" title="Lookup help for this page in manual"><i class='o_icon o_icon_help'></i> Help</a></span></li>
-                <li><a class="" id="o_c1000000230"  href="/olat/auth/1%3A1%3A1000000230%3A2%3A1%3Acid%3Apresence.available/" onclick="o_XHREvent('/olat/auth/1:1:1000000230:2:1/',true,true,'cid','presence.available'); return false;" ><i class='o_icon o_icon_status_available o_icon-fw'></i> <span>Available</span></a></li>
-                <li><a class="" id="o_c1000000231"  href="/olat/auth/1%3A1%3A1000000231%3A2%3A1%3Acid%3Apresence.dnd/" onclick="o_XHREvent('/olat/auth/1:1:1000000231:2:1/',true,true,'cid','presence.dnd'); return false;" ><i class='o_icon o_icon_status_dnd o_icon-fw'></i> <span>Please do not disturb</span></a></li>
-                <li><a class="" id="o_c1000000232"  href="/olat/auth/1%3A1%3A1000000232%3A2%3A1%3Acid%3Apresence.unavailable/" onclick="o_XHREvent('/olat/auth/1:1:1000000232:2:1/',true,true,'cid','presence.unavailable'); return false;" ><i class='o_icon o_icon_status_unavailable o_icon-fw'></i> <span>Not available</span></a></li>
-              </ul>
-            </div>
-
-            <div id="o_im_summary"><a class="badge" id="o_c1000000233"  href="/olat/auth/1%3A1%3A1000000233%3A3%3A1%3Acid%3Acmd.roster/" onclick="o_XHREvent('/olat/auth/1:1:1000000233:3:1/',true,true,'cid','cmd.roster'); return false;"  title="Who else from my group colleagues are logged on to OpenOLAT? Select one person you want to chat with."><span>0/0</span></a> <script type="text/javascript">
-              /* <![CDATA[ */
-              (function(){ var o_c1000000233 = jQuery('#o_c1000000233');o_c1000000233.click(function(event) { jQuery('#o_c1000000233').each(function(index, el) {;  var href = jQuery(el).attr('href'); 	if(href.indexOf('x') == -1) jQuery(el).attr('href',href+'x'+event.pageX+'y'+event.pageY+''); });});})();
-              /* ]]> */
-            </script></div>
-            <div id='o_c1000000234'><!-- empty --></div>
-          </div></div></li>
-          <li  id="o_navbar_search_opener"  class="o_navbar_tool  dropdown "><a id="o_search_tool_toggler" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Search">
-            <i class="o_icon o_icon_search o_icon-lg"></i>
-            <span>Search</span>
-          </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li id="o_navbar_search" class="o_navbar-form">
-                <div id='o_c1000000243'><div id='o_c1000000242'><form  method="post" id="ofo_1000000242" name="ofo_1000000242" action="/olat/auth/1%3A1%3A1000000242%3A1%3A1%3Aofo_%3Afid/"  onsubmit="return o_XHRSubmit('ofo_1000000242');" ><input type="hidden" id="ofo_1000000242_dispatchuri" name="dispatchuri" value="undefined" /><input type="hidden" id="ofo_1000000242_eventval" name="dispatchevent" value="undefined" /><fieldset  id="o_c1000000241"  class="o_form form-inline  ">
-
-                  <div class="form-group  ">
-                    <div  id="o_c1000000247"  class="form-group  ">
-                      <div class="input-group">
-
-                        <div id='o_c1000000251'><input type="text" id="o_fi1000000251" name="o_fi1000000251" class='form-control' size="35" maxlength="255" value=""  placeholder="Search" autofocus /> <script type="text/javascript">
-                          /* <![CDATA[ */
-                          (function() { jQuery('#o_fi1000000251').on('change keypress', {formId:"ofo_1000000242_dispatchuri", hideMessage:false}, setFlexiFormDirtyByListener);})();
-                          /* ]]> */
-                        </script></div>
-
-                        <span class="input-group-addon">
-				<a class="o_search" id="o_fi1000000256" href="javascript:o_ffEvent('ofo_1000000242','ofo_1000000242_dispatchuri','o_fi1000000256','ofo_1000000242_eventval','2');"  title="Search in: &quot;In OLAT&quot;"><i class='o_icon o_icon-fw o_icon_search o_icon-lg'></i> <span></span></a>
-			</span>
-
-                      </div>
-                    </div>
-                  </div>
-                </fieldset></form> <script type="text/javascript">
-                  /* <![CDATA[ */
-                  (function() {jQuery('#ofo_1000000242').keypress(function(event) {
-                    if (13 == event.keyCode) {
-                      event.preventDefault();
-                      if (this.onsubmit()) { this.submit(); }
-                    }
-                  });
-                  })();
-                  /* ]]> */
-                </script></div></div>
-              </li>
-            </ul>
-            <script type="text/javascript">
-              /* <![CDATA[ */
-              jQuery('#o_search_tool_toggler').click(function () {
-                setTimeout(function() {
-                  jQuery('#o_search_tool_toggler[aria-expanded="true"] + .dropdown-menu #o_navbar_search input:text').focus();
-                },0);
-              });
-              /* ]]> */
-            </script>
-          </li>
-          <li id="o_navbar_my_menu" class="o_portrait">
-            <a id="o_sel_navbar_my_menu_caret" href="javascript:OPOL.navbar.toggleRight();">
-              <div id='o_c1000000260'><div id='o_c1000000259'><div class="o_portrait">
-                <div class="o_portrait_image">
-                  <img src="/olat/raw/b277bb8:b277bb85f72dc3424889e9706c97bac2abb45f32/images/transparent.gif" alt="User profile and visiting card: Administrator, OpenOLAT" title="User profile and visiting card: Administrator, OpenOLAT" class="o_portrait_dummy_small" />
-                </div>
-              </div>
-              </div></div>
-              <span>OpenOLAT</span>
-              <b class="caret"></b>
-            </a>
-          </li>
-        </ul>
-      </div>
-      </div>
+      {{#block "sitesComponent"}}
+      {{/block}}
+      {{#block "tabsComponent"}}
+      {{/block}}
+      {{#block "topnavComponent"}}
+      {{/block}}
     </div>
 
   </div>
 </div>
 <div id="o_container_page_width_toggler">
-  <div id="o_go_standard_width" title="no translation::::content.width.standard, fallBackLevel 0: in org.olat.core.commons.fullWebApp (fallback:true, fallBackTranslator:-) for locale enorg.olat.core.logging.OLATRuntimeException: transl dummy
-	at org.olat.core.gui.translator.PackageTranslator.getErrorMessage(PackageTranslator.java:261)
-	at org.olat.core.gui.translator.PackageTranslator.translate(PackageTranslator.java:170)
-	at org.olat.core.gui.translator.PackageTranslator.translate(PackageTranslator.java:157)
-	at org.olat.core.gui.translator.PackageTranslator.translate(PackageTranslator.java:151)
-	at org.olat.core.gui.render.velocity.VelocityRenderDecorator.translate(VelocityRenderDecorator.java:682)
-	at org.olat.core.gui.render.velocity.VelocityRenderDecorator.translateInAttribute(VelocityRenderDecorator.java:694)
-	at sun.reflect.GeneratedMethodAccessor145.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.doInvoke(UberspectImpl.java:506)
-	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:494)
-	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:198)
-	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:304)
-	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:411)
-	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:144)
-	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:172)
-	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:377)
-	at org.apache.velocity.Template.merge(Template.java:359)
-	at org.apache.velocity.Template.merge(Template.java:264)
-	at org.olat.core.gui.render.velocity.VelocityHelper.merge(VelocityHelper.java:153)
-	at org.olat.core.gui.render.velocity.VelocityHelper.mergeContent(VelocityHelper.java:171)
-	at org.olat.core.gui.components.velocity.VelocityContainerRenderer.render(VelocityContainerRenderer.java:65)
-	at org.olat.core.gui.render.Renderer.render(Renderer.java:236)
-	at org.olat.core.gui.components.panel.PanelRenderer.render(PanelRenderer.java:44)
-	at org.olat.core.gui.render.Renderer.render(Renderer.java:236)
-	at org.olat.core.gui.render.Renderer.render(Renderer.java:186)
-	at org.olat.core.gui.components.Window.dispatchRequest(Window.java:815)
-	at org.olat.dispatcher.AuthenticatedDispatcher.processBusinessPath(AuthenticatedDispatcher.java:329)
-	at org.olat.dispatcher.AuthenticatedDispatcher.execute(AuthenticatedDispatcher.java:196)
-	at org.olat.core.servlets.OpenOLATServlet.executeUserRequest(OpenOLATServlet.java:294)
-	at org.olat.core.servlets.OpenOLATServlet.doGet(OpenOLATServlet.java:222)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
-	at org.olat.core.servlets.OpenOLATServlet.service(OpenOLATServlet.java:178)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.olat.core.servlets.HeadersFilter.doFilter(HeadersFilter.java:71)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.Exception: olat_rtexception_stackgenerator
-	at org.olat.core.logging.OLATRuntimeException.&lt;init&gt;(OLATRuntimeException.java:57)
-	at org.olat.core.logging.OLATRuntimeException.&lt;init&gt;(OLATRuntimeException.java:87)
-	... 59 more
-" class="btn btn-primary btn-xs"><i class="o_icon o_icon_width_collapse o_icon-fw"> </i></div>
-  <div id="o_go_full_width" title="no translation::::content.width.standard, fallBackLevel 0: in org.olat.core.commons.fullWebApp (fallback:true, fallBackTranslator:-) for locale enorg.olat.core.logging.OLATRuntimeException: transl dummy
-	at org.olat.core.gui.translator.PackageTranslator.getErrorMessage(PackageTranslator.java:261)
-	at org.olat.core.gui.translator.PackageTranslator.translate(PackageTranslator.java:170)
-	at org.olat.core.gui.translator.PackageTranslator.translate(PackageTranslator.java:157)
-	at org.olat.core.gui.translator.PackageTranslator.translate(PackageTranslator.java:151)
-	at org.olat.core.gui.render.velocity.VelocityRenderDecorator.translate(VelocityRenderDecorator.java:682)
-	at org.olat.core.gui.render.velocity.VelocityRenderDecorator.translateInAttribute(VelocityRenderDecorator.java:694)
-	at sun.reflect.GeneratedMethodAccessor145.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.doInvoke(UberspectImpl.java:506)
-	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:494)
-	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:198)
-	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:304)
-	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:411)
-	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:144)
-	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:172)
-	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:377)
-	at org.apache.velocity.Template.merge(Template.java:359)
-	at org.apache.velocity.Template.merge(Template.java:264)
-	at org.olat.core.gui.render.velocity.VelocityHelper.merge(VelocityHelper.java:153)
-	at org.olat.core.gui.render.velocity.VelocityHelper.mergeContent(VelocityHelper.java:171)
-	at org.olat.core.gui.components.velocity.VelocityContainerRenderer.render(VelocityContainerRenderer.java:65)
-	at org.olat.core.gui.render.Renderer.render(Renderer.java:236)
-	at org.olat.core.gui.components.panel.PanelRenderer.render(PanelRenderer.java:44)
-	at org.olat.core.gui.render.Renderer.render(Renderer.java:236)
-	at org.olat.core.gui.render.Renderer.render(Renderer.java:186)
-	at org.olat.core.gui.components.Window.dispatchRequest(Window.java:815)
-	at org.olat.dispatcher.AuthenticatedDispatcher.processBusinessPath(AuthenticatedDispatcher.java:329)
-	at org.olat.dispatcher.AuthenticatedDispatcher.execute(AuthenticatedDispatcher.java:196)
-	at org.olat.core.servlets.OpenOLATServlet.executeUserRequest(OpenOLATServlet.java:294)
-	at org.olat.core.servlets.OpenOLATServlet.doGet(OpenOLATServlet.java:222)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
-	at org.olat.core.servlets.OpenOLATServlet.service(OpenOLATServlet.java:178)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.olat.core.servlets.HeadersFilter.doFilter(HeadersFilter.java:71)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.Exception: olat_rtexception_stackgenerator
-	at org.olat.core.logging.OLATRuntimeException.&lt;init&gt;(OLATRuntimeException.java:57)
-	at org.olat.core.logging.OLATRuntimeException.&lt;init&gt;(OLATRuntimeException.java:87)
-	... 59 more
-" class="btn btn-default btn-xs"><i class="o_icon o_icon_width_expand o_icon-fw"> </i></div>
+  <div id="o_go_standard_width" title="Foo" class="btn btn-primary btn-xs"><i class="o_icon o_icon_width_collapse o_icon-fw"> </i></div>
+<div id="o_go_full_width" title="Bar" class="btn btn-default btn-xs"><i class="o_icon o_icon_width_expand o_icon-fw"> </i></div>
 </div>
-<div><script type="text/javascript">
-  /* <![CDATA[ */
-  jQuery(document).ready(function() {
-    jQuery("#o_go_standard_width").click(function() { OPOL.setContainerFullWidth(0); o_XHRNFEvent('/olat/auth/1:1:1000000198:2:1/','cid','width.standard','no-response','oo-no-response'); });
-    jQuery("#o_go_full_width").click(function() { OPOL.setContainerFullWidth(1); o_XHRNFEvent('/olat/auth/1:1:1000000198:2:1/','cid','width.full','no-response','oo-no-response'); });
-  });
-  /* ]]> */
-</script></div>
-<div id='o_c1000000204'><!-- empty --></div>
+
 
 <div id="o_main_wrapper">
   <div id="o_main_container" class="o_container_offcanvas container-fluid">
-    <div id='o_c1000000292'><div id='o_c1000000644'><div id='o_main' class='row '>
-      <div id='o_main_center' class='split-pane'>
-        <div id='o_main_center_content' class='clearfix'>
-          <a id='o_content'></a>
-          <div id='o_main_center_content_inner'>
-            <div id='o_c1000000636'><div id='o_c1000000637'><div class='o_segments btn-group btn-group-justified'><a class="btn btn-primary o_sel_mycourses_fav" id="o_c1000000638"  href="/olat/auth/1%3A1%3A1000000637%3A2%3A1%3Acid%3Asearch.mark/" onclick="o_XHREvent('/olat/auth/1:1:1000000637:2:1/',true,true,'cid','search.mark'); return false;" ><span>Favourites</span></a><a class="btn btn-default o_sel_mycourses_my" id="o_c1000000639"  href="/olat/auth/1%3A1%3A1000000637%3A2%3A1%3Acid%3Asearch.mycourses.student/" onclick="o_XHREvent('/olat/auth/1:1:1000000637:2:1/',true,true,'cid','search.mycourses.student'); return false;" ><span>My courses</span></a><a class="btn btn-default o_sel_mycurriculums" id="o_c1000000640"  href="/olat/auth/1%3A1%3A1000000637%3A2%3A1%3Acid%3Asearch.curriculums/" onclick="o_XHREvent('/olat/auth/1:1:1000000637:2:1/',true,true,'cid','search.curriculums'); return false;" ><span>Curriculum</span></a><a class="btn btn-default o_sel_mycourses_closed" id="o_c1000000641"  href="/olat/auth/1%3A1%3A1000000637%3A2%3A1%3Acid%3Asearch.courses.closed/" onclick="o_XHREvent('/olat/auth/1:1:1000000637:2:1/',true,true,'cid','search.courses.closed'); return false;" ><span>Finished</span></a><a class="btn btn-default o_sel_mycourses_catlog" id="o_c1000000642"  href="/olat/auth/1%3A1%3A1000000637%3A2%3A1%3Acid%3Asearch.catalog/" onclick="o_XHREvent('/olat/auth/1:1:1000000637:2:1/',true,true,'cid','search.catalog'); return false;" ><span>Catalog</span></a><a class="btn btn-default o_sel_mycourses_search" id="o_c1000000643"  href="/olat/auth/1%3A1%3A1000000637%3A2%3A1%3Acid%3Asearch.courses.student/" onclick="o_XHREvent('/olat/auth/1:1:1000000637:2:1/',true,true,'cid','search.courses.student'); return false;" ><span>Search</span></a></div></div>
-              <div class="o_segments_content clearfix">
-                <div id='o_c1000000646' class=''><div id='o_c1000000654'><div id='o_c1000000653'><form  method="post" id="ofo_1000000653" name="ofo_1000000653" action="/olat/auth/1%3A1%3A1000000653%3A1%3A1%3Aofo_%3Afid/"  onsubmit="return o_XHRSubmit('ofo_1000000653');" ><input type="hidden" id="ofo_1000000653_dispatchuri" name="dispatchuri" value="undefined" /><input type="hidden" id="ofo_1000000653_eventval" name="dispatchevent" value="undefined" /><div id='o_c1000000652'><div id='o_c1000000658'><div class='row clearfix o_table_toolbar'><div class='col-sm-6 col-xs-12 o_table_toolbar_left'></div><div class='col-sm-2 col-xs-4 o_table_row_count'>1 Entry</div><div class='col-sm-4 col-xs-8'><div class='pull-right'><div class='o_table_tools o_noprint'><div class='btn-group'><button id='table-button-filters-o_fi1000000658' type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'><i class='o_icon o_icon_filter o_icon-lg'> </i> <b class='caret'></b></button><div id='table-filters-o_fi1000000658' class='hide'><ul class='o_dropdown list-unstyled' role='menu'><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','showAll')">Show all</a></li><li class='divider'></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','currentCourses')">Current courses</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','upcomingCourses')">Upcoming courses</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','oldCourses')">Finished courses</a></li><li class='divider'></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','asParticipant')">Booked as participant</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','asCoach')">Booked as coach</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','asAuthor')">Booked as author</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','notBooked')">Not booked</a></li><li class='divider'></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','passed')">Passed</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','notPassed')">Not passed</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'filter','withoutPassedInfos')">No assessment</a></li></ul></div></div> <script type='text/javascript'>
-                  /* <![CDATA[ */
-                  jQuery(function() { o_popover('table-button-filters-o_fi1000000658','table-filters-o_fi1000000658'); });
-                  /* ]]> */
-                </script><div class='btn-group'><button id='table-button-sorters-o_fi1000000658' type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'><i class='o_icon o_icon_sort_menu o_icon-lg'> </i> <b class='caret'></b></button><div id='table-sorters-o_fi1000000658' class='hide'><ul class='o_dropdown list-unstyled' role='menu'><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','automatic','asc','asc')">Automatic</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','favorit','asc','asc')">Favourite</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','lastVisited','asc','asc')">Last visited</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','score','asc','asc')">Score</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','passed','asc','asc')">Passed</a></li><li class='divider'></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','title','asc','desc')"><i class='o_icon o_icon_sort_desc o_icon-fw'> </i> Title</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','lifecycle','asc','asc')">Execution period</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','author','asc','asc')">Author</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','creationDate','asc','asc')">Creation date</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','lastModified','asc','asc')">Last modified</a></li><li><a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000658','ofo_1000000653_eventval','2',true,true,true,'sort','rating','asc','asc')">Assessment</a></li></ul></div></div> <script type='text/javascript'>
-                  /* <![CDATA[ */
-                  jQuery(function() { o_popover('table-button-sorters-o_fi1000000658','table-sorters-o_fi1000000658'); });
-                  /* ]]> */
-                </script><div class='btn-group'><a class=" active btn btn-default o_sel_custom" id="o_fi1000000669" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000669','ofo_1000000653_eventval','2');" ><i class='o_icon o_icon_table_custom o_icon-lg'></i> <span></span></a><a class="btn btn-default o_sel_table" id="o_fi1000000670" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000670','ofo_1000000653_eventval','2');" ><i class='o_icon o_icon_table o_icon-lg'></i> <span></span></a></div> </div></div></div></div><div class="o_table_wrapper o_table_flexi o_coursetable o_rendertype_custom"><div class='o_table_body container-fluid'><div class='o_table_row row'><div >
-                  <div class="o_visual">
-                    <a href="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000652','ofo_1000000653_eventval','2',true,true,false,'select_row','1310720')">
-                      <div class="o_visual_not_available"></div>
-                    </a>
-                  </div>
-                  <div class="o_meta">
-                    <div class="o_go_xs visible-xs">
-                      <i class=" o_icon o_icon_start o_icon-lg"></i>
-                    </div>
-                    <h4 class="o_title"><a class="" id="o_fi1000000696" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000696','ofo_1000000653_eventval','2');" ><span>A test</span></a>
-                    </h4>
-                    <div class="o_desc">
-
-                    </div>
-                    <div class="o_bookmark"><a class="" id="o_fi1000000695" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000695','ofo_1000000653_eventval','2');"  title="Remove bookmark"><i class='o_icon o_icon_bookmark o_icon-lg'></i> <span></span></a></div>
-                  </div>
-                  <div class="o_access container">
-
-
-
-
-                    <div class="o_social o_ratings_and_comments row">
-                      <div class="o_rating_wrapper">
-                        <div id='o_c1000000687'><div id=o_fi1000000687 class='o_ratings_and_comments'><div id='o_rating_wrapper_o_fi1000000687' class='o_rating_wrapper'><div id='o_rating_o_fi1000000687' style='display:none;'><div class='o_rating '><div class='o_rating_items o_enabled'><a class='o_icon o_icon-lg o_icon_rating_on' href="javascript:;" onclick="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fiorusr_rat_1310720','ofo_1000000653_eventval','2',false,false,true,'cid','1')"  title="Not good"></a><a class='o_icon o_icon-lg o_icon_rating_on' href="javascript:;" onclick="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fiorusr_rat_1310720','ofo_1000000653_eventval','2',false,false,true,'cid','2')"  title="Moderate"></a><a class='o_icon o_icon-lg o_icon_rating_on' href="javascript:;" onclick="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fiorusr_rat_1310720','ofo_1000000653_eventval','2',false,false,true,'cid','3')"  title="Good"></a><a class='o_icon o_icon-lg o_icon_rating_on' href="javascript:;" onclick="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fiorusr_rat_1310720','ofo_1000000653_eventval','2',false,false,true,'cid','4')"  title="Very good"></a><a class='o_icon o_icon-lg o_icon_rating_off' href="javascript:;" onclick="javascript:o_ffXHREvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fiorusr_rat_1310720','ofo_1000000653_eventval','2',false,false,true,'cid','5')"  title="Excellent"></a></div><div class='o_rating_explanation'>Click here to make assessments</div></div> <script type="text/javascript">
-                          /* <![CDATA[ */
-                          (function() { jQuery('#o_fiorusr_rat_1310720').on('click', {formId:"ofo_1000000653_dispatchuri", hideMessage:false}, setFlexiFormDirtyByListener);})();
-                          /* ]]> */
-                        </script></div><div id='o_rating_avg_o_fi1000000687'><div class='o_rating '><div class='o_rating_items'><a class='o_icon o_icon-lg o_icon_rating_on' href='javascript:;' onclick='return false;' title="Not good"></a><a class='o_icon o_icon-lg o_icon_rating_on' href='javascript:;' onclick='return false;' title="Moderate"></a><a class='o_icon o_icon-lg o_icon_rating_on' href='javascript:;' onclick='return false;' title="Good"></a><a class='o_icon o_icon-lg o_icon_rating_on' href='javascript:;' onclick='return false;' title="Very good"></a><a class='o_icon o_icon-lg o_icon_rating_off' href='javascript:;' onclick='return false;' title="Excellent"></a></div><div class='o_rating_explanation'>Based on 1 ratings</div></div> <script type="text/javascript">
-                          /* <![CDATA[ */
-                          (function() { jQuery('#o_fioravg_rat_1310720').on('click', {formId:"ofo_1000000653_dispatchuri", hideMessage:false}, setFlexiFormDirtyByListener);})();
-                          /* ]]> */
-                        </script></div></div></div><script type='text/javascript'>
-                          /* <![CDATA[ */
-                          jQuery(function(){
-                            jQuery('#o_rating_wrapper_o_fi1000000687')
-                              .hover(
-                                function(){ jQuery('#o_rating_o_fi1000000687').show(); jQuery('#o_rating_avg_o_fi1000000687').hide(); },
-                                function(){ jQuery('#o_rating_o_fi1000000687').hide(); jQuery('#o_rating_avg_o_fi1000000687').show(); }
-                              );
-                          });
-                          /* ]]> */
-                        </script>
-                        </div>
-                      </div>
-                      <a class="o_comments" id="o_fi1000000705" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000705','ofo_1000000653_eventval','2');" ><i class='o_icon o_icon_comments o_icon-lg'></i> <span>(1)</span></a>
-                    </div>
-
-                    <a class="o_details" id="o_fi1000000697" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000697','ofo_1000000653_eventval','2');" ><span>Info page</span></a>
-                    <a class="o_start btn-block" id="o_fi1000000698" href="javascript:o_ffEvent('ofo_1000000653','ofo_1000000653_dispatchuri','o_fi1000000698','ofo_1000000653_eventval','2');" ><span>start</span> <i class='o_icon o_icon_start'></i> </a>
-                  </div>
-                </div></div></div></div> <script type="text/javascript">
-                  /* <![CDATA[ */
-                  (function() { jQuery('#o_fi1000000658').on('change keypress', {formId:"ofo_1000000653_dispatchuri", hideMessage:false}, setFlexiFormDirtyByListener);})();
-                  /* ]]> */
-                </script></div></div></form> <script type="text/javascript">
-                  /* <![CDATA[ */
-                  (function() {jQuery('#ofo_1000000653').keypress(function(event) {
-                    if (13 == event.keyCode) {
-                      event.preventDefault();
-                      if (this.onsubmit()) { this.submit(); }
-                    }
-                  });
-                  })();
-                  /* ]]> */
-                </script></div></div></div>
-              </div>
-            </div></div>
-        </div>
-      </div>
-    </div>
-    </div></div>
+    {{#block "main"}}
+    {{/block}}
     <a id="o_toplink" href="#o_top" onclick="o_scrollToElement('#o_top');" title="Go to top of page">
       <i class="o_icon o_icon_top"></i>
       Go to top
@@ -459,86 +82,8 @@ Caused by: java.lang.Exception: olat_rtexception_stackgenerator
 
 <div id="o_footer_wrapper">
   <div id="o_footer_container" class="o_container_offcanvas container-fluid">
-    <div id='o_c1000000297'><div id='o_c1000000293'><div id="o_footer_user" class="clearfix">
-      <span id="o_username">Logged in as <i>Administrator, OpenOLAT</i></span>
-      <span id="o_counter">(<span id='o_c1000000294'>1</span> People are online)</span>
-      <div id='o_c1000000296'><div id='o_c1000000295'><script type="text/javascript">
-        /* <![CDATA[ */
-        function o_shareSocialUrl() {
-          if(o_info.businessPath && o_info.businessPath.length > 0) return o_info.businessPath;
-          return 'http://localhost:8080/olat';
-        }
-        function o_shareSocialTitle() {
-          return document.title;
-        }
-        function o_shareCallout() {
-          return '<p><input id="callout_share_link_in" type="text" name="cl_share_link" value="' + o_shareSocialUrl() + '" size="64" /></p>';
-        }
-        /* ]]> */
-      </script>
-
-
-        <div id="o_share">
-
-          <a id="o_share_social" href="javascript:;" title="Share link to this page">
-            <i class="o_icon o_icon_share_social o_icon-lg"></i>
-          </a>
-          <div id="o_share_social_wrapper" class="hide"><div id="o_share_social_container">
-            <a id="o_twitter" href="#" target="_blank" title="Tweet link" onclick="window.open('http://twitter.com/share?url='+encodeURIComponent(o_shareSocialUrl())+'&amp;text='+encodeURIComponent(o_shareSocialTitle()));return false;">
-              <i class="o_icon o_icon_twitter o_icon-lg"></i>
-            </a>
-            <a id="o_facebook" href="#" target="_blank" title="Share link on facebook" onclick="window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(o_shareSocialUrl())+'&amp;t='+encodeURIComponent(o_shareSocialTitle()));return false;">
-              <i class="o_icon o_icon_facebook o_icon-lg"></i>
-            </a>
-            <a id="o_google" href="#" target="_blank" title="Bookmark link on google" onclick="window.open('https://www.google.com/bookmarks/mark?op=add&amp;bkmk='+encodeURIComponent(o_shareSocialUrl())+'&amp;title='+encodeURIComponent(o_shareSocialTitle()));return false;">
-              <i class="o_icon o_icon_google o_icon-lg"></i>
-            </a>
-            <a id="o_delicious" href="#" target="_blank" title="Bookmark link on delicous" onclick="window.open('http://www.delicious.com/save?url='+encodeURIComponent(o_shareSocialUrl())+'&amp;title='+encodeURIComponent(o_shareSocialTitle()));return false;">
-              <i class="o_icon o_icon_delicious o_icon-lg"></i>
-            </a>
-            <a id="o_digg" href="#" title="Share link on digg" onclick="window.open('http://digg.com/submit?url='+encodeURIComponent(o_shareSocialUrl())+'&amp;title='+encodeURIComponent(o_shareSocialTitle()));return false;">
-              <i class="o_icon o_icon_digg o_icon-lg"></i>
-            </a>
-            <a id="o_mail" href="javascript: window.location.href='mailto:?subject=' + encodeURIComponent(o_shareSocialTitle()) + '&body=' + encodeURIComponent(o_shareSocialUrl());" title="Share link with mail">
-              <i class="o_icon o_icon_mailto o_icon-lg"></i>
-            </a>
-          </div></div>
-          <script type="text/javascript">
-            /* <![CDATA[ */
-            jQuery(function() {
-              o_shareLinkPopup('o_share_social', jQuery('#o_share_social_wrapper').html());
-            });
-            /* ]]> */
-          </script>
-          <a id="o_link" href="javascript:;" title="Copy link">
-            <i class="o_icon o_icon_link o_icon-lg"></i>
-          </a>
-          <a id="o_qrcode" href="javascript:;" title="Copy QR code">
-            <i class="o_icon o_icon_qrcode o_icon-lg"></i>
-          </a>
-          <script type="text/javascript">
-            /* <![CDATA[ */
-            jQuery(function() {
-              o_shareLinkPopup('o_link', o_shareCallout);
-              o_QRCodePopup('o_qrcode', o_shareSocialUrl);
-            });
-            /* ]]> */
-          </script>
-          <a id="o_landingpage"  href="/olat/auth/1%3A1%3A1000000295%3A2%3A1%3Acid%3AsetLandingPage/" onclick="o_XHREvent('/olat/auth/1:1:1000000295:2:1/',false,false,'cid','setLandingPage'); return false;"  title="Set current page as personal start page in profile">
-            <i class="o_icon o_icon_landingpage o_icon-lg"></i>
-          </a>
-        </div>
-      </div></div>
-    </div>
-      <div id="o_footer_powered" class="clearfix">
-        <a href="http://www.openolat.org" target="_blank" title="OpenOLAT - infinite learning">
-          <img src="/olat/raw/b277bb8:b277bb85f72dc3424889e9706c97bac2abb45f32/images/openolat/openolat_powerd_by_120x30.png" alt="powered by OpenOLAT" />
-        </a>
-      </div>
-      <div id="o_footer_version" class="clearfix">
-        <a class="" id="o_comenu_about"  href="/olat/auth/1%3A1%3Aomenu_about%3A1%3A1%3Acid%3Aabout/" onclick="o_XHREvent('/olat/auth/1:1:omenu_about:1:1/',true,true,'cid','about'); return false;"  title="Information on OpenOLAT Build (b277bb8:b277bb85f72dc3424889e9706c97bac2abb45f32)"><span>OpenOLAT&nbsp;13.0b6</span></a>
-      </div>
-    </div></div>
+    {{#block "footerComptonent"}}
+    {{/block}}
   </div>
 </div>
 

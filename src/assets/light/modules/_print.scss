@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+/*
+*  =================================================
+*  
+*   Rules for OpenOLAT print layout. Mostly to hide things in print view. 
+*   
+*   @author gnaegi,  www.frentix.com
+*   @date April 2014
+*
+*  =================================================
+*/
+
+@media print {
+
+	/* don't print URL's on href, ugly bootstrap default */
+	a[href]:after {
+    	content: "";
+  	}
+
+	/* Hide general elements */
+	#o_header_wrapper,
+	#o_offcanvas_right,
+	#o_navbar_wrapper,
+	#o_footer_wrapper,
+	#o_toplink,
+	#o_main_left, 
+	#o_main_right,
+	#o_main_toolbar,
+	#jsMath_PrintWarning,
+	.o_segments,
+	.o_table_toolbar,
+	.o_breadcrumb,
+	.o_bookmark,
+	.o_noti,
+	.o_opener,
+	.o_hide,
+	.o_noprint { 
+		display: none !important;
+	} 
+
+	/* Page breaks */	
+	.o_print_break_avoid {
+		page-break-inside : avoid;
+	}
+	.o_print_break_before {
+		page-break-before: always;
+	}
+	.o_print_break_after {
+		clear:both;
+		page-break-after:always;
+	}
+	
+	/* Hide buttons in forms and print text area with full content */
+	.btn {
+		display: none;
+	}
+	.o_form {
+		/* textarea: can not blow up for now, browsers ignore the height */
+		textarea,
+		.form-control.textarea_disabled {
+			-webkit-print-color-adjust: exact;
+			color-adjust: exact;
+			background: #fff !important;
+			height: auto !important;
+			color: #000 !important;
+			resize: none;
+		}
+	}
+	
+	/* Hide comments form */
+	#o_comment_form_link,
+	.o_comments form {
+			display: none !important;
+	}
+	
+	/* Hide avatar - can not print background css images */
+	.o_avatar {
+		display: none;
+	}
+
+	/* Hide backgrounds */	
+	body.o_dmz {
+		background: white !important;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+	
+	/* When printing dialogs, hide everything below */
+	.modal-content {
+		border: 0;
+	}
+	.modal-header {
+		display: none;
+	}
+	.modal-body{
+		padding: 0;
+	}
+	.modal-dialog {
+		margin: 0 !important;
+		width: 100% !important;
+		height: 100% !important;	
+		background: #fff !important;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+	
+	/* Print background colors in progress bar */
+	.progress {
+		page-break-inside : avoid;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	  	background-color: rgba(0,0,0,.1) !important;
+	  	border: 1px solid rgba(0,0,0,.5);
+	}
+	.progress-bar {
+		-webkit-print-color-adjust: exact;
+		background-color: #000 !important;
+		/* fallback for non-webkit browsers */
+		border: 10px solid #000;
+	}
+	
+	/* Print backgrounds on sliders */
+	.ui-slider.ui-slider-horizontal.ui-widget-content {
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+		background: $o-slider-background !important;
+		.ui-slider-handle {
+			-webkit-print-color-adjust: exact;
+			color-adjust: exact;
+		}
+	}
+	.o_has_value.ui-slider.ui-slider-horizontal.ui-widget-content {
+		.ui-slider-handle {
+			background-color: $o-slider-handler-background-color !important;
+		}
+	}
+	.o_no_value.ui-slider.ui-slider-horizontal.ui-widget-content {
+		.ui-slider-handle {
+			border: none !important
+		}
+	}
+	
+	
+	/* Print background colors in radial progress bar */
+	.radial-progress {
+		page-break-inside : avoid;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+		background-color: #eee !important;
+		.circle .mask .fill {
+			-webkit-print-color-adjust: exact;
+			color-adjust: exact;
+			background-color: #000 !important;
+		}
+		.inset {
+			-webkit-print-color-adjust: exact;
+			color-adjust: exact;
+			background-color: #fff !important;
+			
+			.bgIcon {
+				opacity: 0.3;
+				transition: opacity 0.3;
+			}
+			.bgIcon:before, .o_icon_progress_danger:before, .o_icon_progress_success:before {
+				opacity: 0.3;
+				transition: opacity 0.3;
+				color: #777 !important;
+			}
+		}
+		&:not([data-progress="0"]) .inset .bgIcon {
+			opacity: 0.3;
+			transition: opacity 0.3;
+			color: #777 !important;
+		}
+	}
+	
+	body {
+		margin: 0; 
+		/* 	Make everything a bit smaller. 
+			OO Layout is designed for mobile-first, thus everything is a bit large for printing 
+			might not work on FF, but hey, better than nothing
+		*/
+		zoom: 0.6;
+	}
+	
+	table, figure, figure {
+	  page-break-inside: avoid;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+	  page-break-after: avoid;
+	}
+	
+	/* disclaimer formatting */
+	.o_disclaimer .o_disclaimer_content {
+		max-height: none;
+	}
+	
+}
+
+
+
